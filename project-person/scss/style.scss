@@ -1,0 +1,331 @@
+@use'variables' as *;
+@use'function' as *;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: sans-serif;
+
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+
+
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    display: block;
+    text-decoration: none;
+    /* 將預設inline改為block */
+    /* 底線會先拿掉 */
+    color: black;
+    /* 設定顏色 */
+}
+
+/* 共用區 */
+section {
+    width: 100%;
+    height: 100vh;
+    @include flex-align-center;
+
+}
+
+.item {
+    @include flex-column;
+    justify-content: center;
+    width: 25%;
+    height: 40vh;
+
+
+    h3 {
+        font-size: 1.5rem;
+        color: map-get($color , primary);
+        font-weight: 800;
+    }
+
+    h2 {
+        font-size: map-get($font-size , xxl);
+        color: map-get($color , font-color);
+        font-weight: 800;
+    }
+
+    p {
+        font-size: map-get($font-size , m);
+        color: map-get($color , font-color);
+        font-weight: 800;
+
+    }
+
+    .more {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 10px;
+        margin-top: 20px;
+
+        a {
+            color: map-get($color , font-color)
+        }
+
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 主要顯示區 */
+main {
+    background-color: map-get($color , bkgcolor)
+}
+
+#topbar {
+    @include flex-align-center;
+    justify-content: space-between;
+    background-color: map-get($color , secondary);
+    margin: 0;
+    padding: 0 50px;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+
+    .navigation {
+        @include flex-center;
+        width: 25%;
+        height: 6vh;
+
+        .menulist {
+            @include flex-align-center;
+            margin: 0 16px;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+            a{
+                font-size: map-get($font-size , l);
+                font-weight: 800;
+            }
+           
+        }
+
+        .iconlist {
+            @include flex-align-center;
+            margin: 0 16px;
+            width: 40%;
+            height: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+#banner {
+    justify-content: space-between;
+    align-items: center;
+
+
+    .item {
+        @include flex-column;
+        justify-content: center;
+        width: 25%;
+        height: 40vh;
+        margin-left: 10%;
+    }
+
+    .banner_img {
+        width: 60%;
+        height: 100vh;
+
+    }
+}
+
+#shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: map-get($color , assistbroen) 20px solid;
+
+    .caption {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 90%;
+        height: 10vh;
+        max-width: 1440px;
+
+        h2 {
+            font-size: 2rem;
+            color: map-get($color , font-color);
+            font-weight: 1000;
+        }
+    }
+
+    .shoplist {
+        display: flex;
+        width: 90%;
+        height: 50vh;
+        overflow-x: scroll;
+        border: #000 solid 2px;
+        max-width: 1440px;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 99px;
+            background-color: map-get($color , assistbroen);
+        }
+
+        &::-webkit-scrollbar-track {
+            margin: 0 500px;
+            border-radius: 99px;
+            border: map-get($color , assistGray-2) solid 2px;
+            background-color: map-get($color , secondary);
+        }
+
+        a {
+            @include flex-column-center;
+            border: #000 solid 2px;
+            width: 100%;
+            height: 85%;
+            margin: 0 8px;
+
+            img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 264px;
+                height: 100%;
+                border: #000 solid 2px;
+                ;
+            }
+        }
+    }
+}
+
+#fashion {
+
+    justify-content: flex-end;
+    background-size: cover;
+    background-image: url(../img/fashionbgk.svg);
+    border-bottom: map-get($color , assistbroen) 20px solid;
+
+    .fashbox {
+        border: map-get($color , bkgcolor) solid 2px;
+        margin-right: 12%;
+        width: 30%;
+        padding: 15px;
+
+        h3 {
+            color: map-get($color , bkgcolor)
+        }
+
+        h2 {
+            color: map-get($color , bkgcolor)
+        }
+
+        p {
+            color: map-get($color , bkgcolor)
+        }
+
+        .more {
+
+            a {
+                color: map-get($color , bkgcolor)
+            }
+
+        }
+
+    }
+
+}
+
+#about {
+
+    justify-content: space-between;
+
+    .about {
+        width: 55%;
+        height: 100%;
+    }
+
+    .aboutbox {
+        width: 40%;
+        height: 100%;
+
+        p {
+            width: 70%;
+        }
+
+        .more {
+            width: 70%;
+        }
+    }
+
+
+}
+
+footer {
+    @include flex-center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
+    background-color: map-get($color , secondary);
+
+    height: 10vh;
+
+    .footerlist {
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                a {
+                    font-size: map-get($font-size , l);
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+}
