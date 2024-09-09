@@ -1,5 +1,5 @@
 @use'../variables' as *;
-
+//   @include flex-column;
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -18,5 +18,4 @@
 @mixin flex-column {
     display: flex;
     flex-direction: column;
-   
 }

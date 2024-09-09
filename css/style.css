@@ -46,12 +46,50 @@ a {
   /* 設定顏色 */
 }
 
+/* 取消按鈕樣式 */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+/* 基本樣式重製 */
+select {
+  -webkit-appearance: none;
+  /* 隱藏默認樣式 (Chrome, Safari, Edge) */
+  -moz-appearance: none;
+  /* 隱藏默認樣式 (Firefox) */
+  appearance: none;
+  /* 隱藏默認樣式 (現代瀏覽器) */
+  background-color: #F5F5F5;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  color: #221712;
+  cursor: pointer;
+  width: 200px;
+  text-align: right;
+}
+
+/* 增加 hover 和 focus 的樣式 */
+select:hover,
+select:focus {
+  border-color: #007BFF;
+  /* 在 hover 或 focus 時的邊框變色 */
+}
+
 /* 共用區 */
 section {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
+  background-color: #F5F5F5;
 }
 
 .item {
@@ -278,4 +316,308 @@ footer .footerlist ul {
 footer .footerlist ul li a {
   font-size: 1.5rem;
   font-weight: 800;
+}
+
+/* 商品頁 shoplist */
+#shoplist {
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 15vh;
+  height: auto;
+}
+#shoplist .shoplist-menu {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: 60vh;
+}
+#shoplist .shoplist-menu h2 {
+  font-size: 1.25rem;
+  color: #221712;
+  font-weight: 800;
+  margin: 5px 0;
+}
+#shoplist .shoplist-menu .choice {
+  display: flex;
+  flex-direction: column;
+}
+#shoplist .shoplist-menu .choice .chlist {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#shoplist .shoplist-menu .choice .choice_btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#shoplist .shoplist-menu .choice .choice_btn #choice_btn {
+  background-color: #771011;
+  color: #F5F5F5;
+  width: 30%;
+  height: 4vh;
+  font-size: 0.8rem;
+  border-radius: 10px;
+}
+#shoplist .shoplist-main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  border: #000 solid 2px;
+}
+#shoplist .shoplist-main .carouselimg {
+  width: 100%;
+  height: 60vh;
+  padding-top: 50px;
+  border: #000 solid 2px;
+}
+#shoplist .shoplist-main .carouselimg a {
+  width: 100%;
+  height: 100%;
+}
+#shoplist .shoplist-main .carouselimg a img {
+  object-fit: cover;
+}
+#shoplist .shoplist-main .commodity h2 {
+  font-size: 1.5rem;
+  color: #221712;
+  font-weight: 800;
+  margin: 5px 0;
+}
+#shoplist .shoplist-main .commodity .commoditylist {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: 100%;
+  border: #000 solid 2px;
+}
+#shoplist .shoplist-main .commodity .commoditylist a {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 480px;
+  margin: auto;
+  margin-bottom: 20px;
+  border: #000 solid 2px;
+}
+#shoplist .shoplist-main .commodity .commoditylist a img {
+  width: 100%;
+  height: 100%;
+}
+#shoplist .shoplist-main .commodity .commoditylist a .price {
+  display: flex;
+  justify-content: space-between;
+}
+#shoplist .morecommdity {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#shoplist .morecommdity #morecommdity {
+  background-color: #771011;
+  color: #F5F5F5;
+  width: 10%;
+  height: 5vh;
+  font-size: 1.25rem;
+  border-radius: 10px;
+}
+
+/* 商品頁面 shop */
+#shop {
+  height: auto;
+  padding-top: 15vh;
+}
+#shop .product {
+  width: 80%;
+  height: 55vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+#shop .product .product-img {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+}
+#shop .product .product-img .proimglist {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#shop .product .product-img .proimglist img {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+}
+#shop .product .product-img .showimglist {
+  display: flex;
+  justify-content: center;
+  width: 78%;
+  height: 100%;
+}
+#shop .product .product-img .showimglist img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#shop .product .product-ifon {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  height: 100%;
+}
+#shop .product .product-ifon .product-title {
+  color: #221712;
+}
+#shop .product .product-ifon .product-title h3 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+#shop .product .product-ifon .product-title p {
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+}
+#shop .product .product-ifon .product-title h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+#shop .product .product-ifon .choice {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 70%;
+  padding-bottom: 2px;
+  margin-bottom: 15px;
+  border-bottom: solid 2px #221712;
+}
+#shop .product .product-ifon .choice h2 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+#shop .product .product-ifon .product_buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 10vh;
+}
+#shop .product .product-ifon .product_buy .amount {
+  width: 25%;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#shop .product .product-ifon .product_buy .amount button {
+  background-color: #6F635B;
+  color: #F5F5F5;
+  align-items: center;
+  width: 30%;
+  height: 80%;
+  line-height: 100%;
+  font-weight: 800;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+#shop .product .product-ifon .product_buy .amount span {
+  font-size: 1rem;
+}
+#shop .product .product-ifon .product_buy .buy-btn {
+  width: 30%;
+  height: 5vh;
+  align-items: center;
+}
+#shop .product .product-ifon .product_buy .buy-btn button {
+  background-color: #771011;
+  color: #F5F5F5;
+  width: 100%;
+  height: 100%;
+  font-weight: 800;
+  font-size: 1rem;
+}
+#shop .introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 55vh;
+  padding-top: 15px;
+}
+#shop .introduction .intcho {
+  display: flex;
+  width: 80%;
+  border-bottom: #000 solid;
+}
+#shop .introduction .intcho #introduce {
+  background-color: #771011;
+  margin-left: 5px;
+}
+#shop .introduction .intcho #evaluate {
+  background-color: #6F635B;
+}
+#shop .introduction .intcho button {
+  color: #F5F5F5;
+  width: 20%;
+  height: 5vh;
+  font-weight: 800;
+  font-size: 1rem;
+}
+#shop .introduction .inttestlist {
+  width: 80%;
+  height: 40vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#shop .introduction .inttestlist p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+#shop .morelist {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: #000 solid;
+  margin-bottom: 10vh;
+}
+#shop .morelist .moretitle {
+  width: 80%;
+  border: #000 solid;
+}
+#shop .morelist .moreproduct {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  align-content: flex-start;
+  border: #000 solid;
+}
+#shop .morelist .moreproduct a {
+  width: 300px;
+  height: 85%;
+  border: #000 solid;
+  margin: 5px;
+}
+#shop .morelist .moreproduct a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#shop .morelist .moreproduct a .price {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */

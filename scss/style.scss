@@ -55,11 +55,53 @@ a {
     /* 設定顏色 */
 }
 
+/* 取消按鈕樣式 */
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* 基本樣式重製 */
+select {
+    -webkit-appearance: none;
+    /* 隱藏默認樣式 (Chrome, Safari, Edge) */
+    -moz-appearance: none;
+    /* 隱藏默認樣式 (Firefox) */
+    appearance: none;
+    /* 隱藏默認樣式 (現代瀏覽器) */
+    background-color: map-get($color , bkgcolor);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    color: map-get($color , font-color);
+    cursor: pointer;
+    width: 200px;
+    text-align: right;
+}
+
+/* 增加 hover 和 focus 的樣式 */
+select:hover,
+select:focus {
+    border-color: #007BFF;
+    /* 在 hover 或 focus 時的邊框變色 */
+}
+
+
+
 /* 共用區 */
 section {
     width: 100%;
     height: 100vh;
     @include flex-align-center;
+    background-color: map-get($color , bkgcolor);
 
 }
 
@@ -136,11 +178,12 @@ main {
             width: 100%;
             height: 100%;
             justify-content: space-between;
-            a{
+
+            a {
                 font-size: map-get($font-size , l);
                 font-weight: 800;
             }
-           
+
         }
 
         .iconlist {
@@ -327,5 +370,383 @@ footer {
                 }
             }
         }
+    }
+}
+
+/* 商品頁 shoplist */
+#shoplist {
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top: 15vh;
+    height: auto;
+
+
+    .shoplist-menu {
+        @include flex-column;
+        width: 10%;
+        height: 60vh;
+
+
+        h2 {
+            font-size: 1.25rem;
+            color: map-get($color , font-color);
+            font-weight: 800;
+            margin: 5px 0;
+
+        }
+
+        .choice {
+            @include flex-column;
+
+            .chlist {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .choice_btn {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+
+                #choice_btn {
+                    background-color: map-get($color , primary);
+                    color: map-get($color , bkgcolor);
+                    width: 30%;
+                    height: 4vh;
+                    font-size: 0.8rem;
+                    border-radius: 10px;
+
+                }
+
+            }
+        }
+
+    }
+
+    .shoplist-main {
+        @include flex-column;
+        width: 80%;
+        height: 100%;
+        border: #000 solid 2px;
+
+        .carouselimg {
+            width: 100%;
+            height: 60vh;
+            padding-top: 50px;
+            border: #000 solid 2px;
+
+            a {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+        }
+
+        .commodity {
+
+
+            h2 {
+                font-size: 1.5rem;
+                color: map-get($color , font-color);
+                font-weight: 800;
+                margin: 5px 0;
+            }
+
+            .commoditylist {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                width: 100%;
+                height: 100%;
+                border: #000 solid 2px;
+
+                a {
+                    @include flex-column;
+                    width: 350px;
+                    height: 480px;
+                    margin: auto;
+                    margin-bottom: 20px;
+                    border: #000 solid 2px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .price {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    .morecommdity {
+        width: 100%;
+        height: 10vh;
+        @include flex-center;
+
+        #morecommdity {
+            background-color: map-get($color , primary);
+            color: map-get($color , bkgcolor);
+            width: 10%;
+            height: 5vh;
+            font-size: 1.25rem;
+            border-radius: 10px;
+
+        }
+
+    }
+
+}
+
+
+/* 商品頁面 shop */
+#shop {
+    height: auto;
+    padding-top: 15vh;
+
+    .product {
+        width: 80%;
+        height: 55vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 100px;
+        // border: #000 solid;
+
+        .product-img {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            height: 100%;
+
+            .proimglist {
+                width: 20%;
+                height: 100%;
+                @include flex-column;
+                justify-content: space-between;
+
+                img {
+                    width: 100%;
+                    height: 95%;
+                    object-fit: cover;
+                }
+            }
+
+            .showimglist {
+                display: flex;
+                justify-content: center;
+                width: 78%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                }
+            }
+        }
+
+        .product-ifon {
+            @include flex-column;
+            width: 48%;
+            height: 100%;
+
+            .product-title {
+                color: map-get($color , font-color);
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 900;
+                }
+
+                p {
+                    font-size: .75rem;
+                    margin-bottom: 20px;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                    font-weight: 900;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .choice {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                width: 70%;
+                padding-bottom: 2px;
+                margin-bottom: 15px;
+                border-bottom: solid 2px map-get($color , font-color);
+
+                h2 {
+                    font-size: 1rem;
+                    font-weight: 800;
+                }
+
+                select {}
+            }
+
+            .product_buy {
+                @include flex-align-center;
+                justify-content: space-between;
+                width: 70%;
+
+                height: 10vh;
+
+                .amount {
+
+                    width: 25%;
+                    height: 5vh;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    button {
+                        background-color: map-get($color , assistbroen);
+                        color: map-get($color , bkgcolor);
+                        align-items: center;
+                        width: 30%;
+                        height: 80%;
+                        line-height: 100%;
+                        font-weight: 800;
+                        font-size: 1rem;
+                        border-radius: 10px;
+                    }
+
+                    span {
+                        font-size: 1rem;
+
+                    }
+
+                }
+
+                .buy-btn {
+                    width: 30%;
+                    height: 5vh;
+                    align-items: center;
+
+                    button {
+                        background-color: map-get($color , primary);
+                        color: map-get($color , bkgcolor);
+                        width: 100%;
+                        height: 100%;
+                        font-weight: 800;
+                        font-size: 1rem;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 55vh;
+        // border: #000 solid;
+        padding-top: 15px;
+
+        .intcho {
+            display: flex;
+            width: 80%;
+            border-bottom: #000 solid;
+
+            #introduce {
+                background-color: map-get($color , primary);
+                margin-left: 5px;
+            }
+
+            #evaluate {
+                background-color: map-get($color , assistbroen);
+
+            }
+
+            button {
+                color: map-get($color , bkgcolor);
+                width: 20%;
+                height: 5vh;
+                font-weight: 800;
+                font-size: 1rem;
+            }
+        }
+
+        .inttestlist {
+            width: 80%;
+            height: 40vh;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            // border: #000 solid;
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .morelist {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: #000 solid;
+        margin-bottom: 10vh;
+
+        .moretitle {
+            width: 80%;
+            border: #000 solid;
+        }
+
+        .moreproduct {
+            width: 100%;
+            height: 45vh;
+            display: flex;
+            align-content: flex-start;
+            border: #000 solid;
+
+            a {
+                width: 300px;
+                height: 85%;
+                border: #000 solid;
+                margin: 5px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .price {
+                    width: 95%;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+
     }
 }
