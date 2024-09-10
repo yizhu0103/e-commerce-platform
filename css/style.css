@@ -551,7 +551,7 @@ footer .footerlist ul li a {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: 55vh;
+  height: 60vh;
   padding-top: 15px;
 }
 #shop .introduction .intcho {
@@ -585,30 +585,29 @@ footer .footerlist ul li a {
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
+#shop .moretitle {
+  width: 80%;
+  border: #000 solid;
+}
 #shop .morelist {
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   border: #000 solid;
+  overflow: auto;
   margin-bottom: 10vh;
 }
-#shop .morelist .moretitle {
-  width: 80%;
-  border: #000 solid;
-}
 #shop .morelist .moreproduct {
-  width: 100%;
-  height: 45vh;
+  width: 1440px;
+  height: 100%;
   display: flex;
   align-content: flex-start;
-  border: #000 solid;
 }
 #shop .morelist .moreproduct a {
   width: 300px;
-  height: 85%;
-  border: #000 solid;
+  height: 280px;
   margin: 5px;
 }
 #shop .morelist .moreproduct a img {
@@ -620,4 +619,72 @@ footer .footerlist ul li a {
   width: 95%;
   display: flex;
   justify-content: space-between;
+}
+
+/* 登入頁面 login */
+#login {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+#login .close {
+  width: 80%;
+  height: 5vh;
+  border: #000 solid;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2%;
+}
+#login .content {
+  width: 75%;
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+}
+#login .content .login_img {
+  width: 40%;
+  height: 100%;
+  border: #000 solid;
+}
+#login .content .login_item {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10vh;
+  line-height: 140%;
+  border: #000 solid;
+}
+#login .content .login_item h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 42px;
+}
+#login .content .login_item .user {
+  width: 80%;
+  max-width: 400px;
+}
+#login .content .login_item .user h3 {
+  font-size: 0.75rem;
+}
+#login .content .login_item .user input {
+  width: 100%;
+  height: 4vh;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+#login .content .login_item .login_btn {
+  padding: 10px 44px;
+  background-color: #ECE6D3;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-top: 27px;
 }/*# sourceMappingURL=style.css.map */
