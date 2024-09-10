@@ -246,7 +246,8 @@ main {
         overflow-x: scroll;
         border: #000 solid 2px;
         max-width: 1440px;
-
+      
+        
         &::-webkit-scrollbar {
             background-color: transparent;
         }
@@ -277,10 +278,10 @@ main {
                 width: 264px;
                 height: 100%;
                 border: #000 solid 2px;
-                ;
+                
             }
-        }
-    }
+        
+    }}
 }
 
 #fashion {
