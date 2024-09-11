@@ -587,7 +587,6 @@ footer .footerlist ul li a {
 }
 #shop .moretitle {
   width: 80%;
-  border: #000 solid;
 }
 #shop .morelist {
   width: 100%;
@@ -595,7 +594,6 @@ footer .footerlist ul li a {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: #000 solid;
   overflow: auto;
   margin-bottom: 10vh;
 }
@@ -630,27 +628,26 @@ footer .footerlist ul li a {
   height: 100vh;
 }
 #login .close {
-  width: 80%;
-  height: 5vh;
-  border: #000 solid;
+  width: 75%;
+  height: 10vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 2%;
 }
 #login .content {
-  width: 75%;
-  height: 60vh;
+  width: 60%;
+  height: 70vh;
   display: flex;
   justify-content: space-between;
+  border: #C0BFB2 solid 1px;
 }
 #login .content .login_img {
-  width: 40%;
+  width: 45%;
   height: 100%;
-  border: #000 solid;
 }
 #login .content .login_item {
-  width: 60%;
+  width: 55%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -658,11 +655,10 @@ footer .footerlist ul li a {
   align-items: center;
   padding-top: 10vh;
   line-height: 140%;
-  border: #000 solid;
 }
 #login .content .login_item h2 {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 900;
   margin-bottom: 42px;
 }
 #login .content .login_item .user {
@@ -677,14 +673,36 @@ footer .footerlist ul li a {
   height: 4vh;
   margin-bottom: 10px;
   padding-left: 10px;
-  border: none;
+  border: #221712 solid 1px;
   border-radius: 10px;
   outline: none;
+}
+#login .content .login_item .user p {
+  display: flex;
+  justify-content: flex-end;
+}
+#login .content .login_item .user p a {
+  font-size: 0.75rem;
+  color: #771011;
+  font-weight: bold;
+  right: 0;
 }
 #login .content .login_item .login_btn {
   padding: 10px 44px;
   background-color: #ECE6D3;
   font-size: 1rem;
   border-radius: 10px;
-  margin-top: 27px;
+  margin: 27px 0;
+}
+#login .content .login_item .checkid {
+  width: 80%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  border-bottom: #C0BFB2 solid;
+}
+#login .content .login_item .checkid p {
+  margin-left: 10px;
+  color: #771011;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
