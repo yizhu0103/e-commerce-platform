@@ -624,8 +624,7 @@ footer .footerlist ul li a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100vh;
+  padding-top: 0;
 }
 #login .close {
   width: 75%;
@@ -705,4 +704,180 @@ footer .footerlist ul li a {
   margin-left: 10px;
   color: #771011;
   font-weight: bold;
+}
+
+/* checkout 結帳畫面 */
+#checkout {
+  flex-direction: column;
+  height: auto;
+  padding-top: 15vh;
+}
+#checkout .shoppingcar {
+  width: 90%;
+  max-width: 1440px;
+  height: 5vh;
+  font-weight: 900;
+}
+#checkout .chechoutlist {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1440px;
+  height: auto;
+  min-height: 90vh;
+}
+#checkout .chechoutlist .com_checkout {
+  width: 60%;
+  height: 100%;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 30vh;
+  padding: 10px;
+  border-bottom: #C0BFB2 solid;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item img {
+  width: 25%;
+  height: 25vh;
+  object-fit: cover;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate {
+  width: 73%;
+  height: 20vh;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .ill_title {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .ill_title h2 {
+  font-weight: 900;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .choice {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: #000 solid;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .choice h2 {
+  font-size: 1rem;
+  font-weight: 900;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .choice select {
+  font-size: 0.75rem;
+  height: 4vh;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .product_buy {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .product_buy .amount {
+  width: 25%;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .product_buy .amount button {
+  background-color: #6F635B;
+  color: #F5F5F5;
+  align-items: center;
+  width: 30%;
+  height: 80%;
+  line-height: 100%;
+  font-weight: 800;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .product_buy .amount span {
+  font-size: 1rem;
+}
+#checkout .chechoutlist .cal_checkout {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#checkout .chechoutlist .cal_checkout .cal_amount {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #C0BFB2;
+}
+#checkout .chechoutlist .cal_checkout .cal_amount h2 {
+  width: 75%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-bottom: rgba(34, 23, 18, 0.4) solid;
+  margin-bottom: 5px;
+}
+#checkout .chechoutlist .cal_checkout .cal_amount .totlist {
+  width: 60%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#checkout .chechoutlist .cal_checkout .cal_amount .totlist h3 {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+#checkout .chechoutlist .cal_checkout .cal_amount .totlist p {
+  font-size: 1rem;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist {
+  width: 100%;
+  height: 60vh;
+  margin-top: 30px;
+  background-color: #C0BFB2;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .schedule {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: rgba(34, 23, 18, 0.4) solid;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .schedule .schedule_list {
+  border: #000 solid;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .transport_choice {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5vh;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .transport_choice h2 {
+  width: 70%;
+  height: 50px;
+  background-color: #F5F5F5;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 50px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .transport_choice .tranlist_btn {
+  width: 60%;
+  height: 10%;
+  margin-top: 5vh;
+  background-color: #771011;
+  color: #F5F5F5;
 }/*# sourceMappingURL=style.css.map */
