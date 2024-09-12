@@ -174,11 +174,11 @@ main {
   justify-content: space-between;
 }
 
-#banner {
+#new {
   justify-content: space-between;
   align-items: center;
 }
-#banner .item {
+#new .item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -186,12 +186,17 @@ main {
   height: 40vh;
   margin-left: 10%;
 }
-#banner .banner_img {
+#new .item .arrow {
+  display: flex;
+  justify-content: flex-end;
+}
+#new .new_img {
   width: 60%;
   height: 100vh;
 }
 
 #shop {
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,7 +221,6 @@ main {
   width: 90%;
   height: 50vh;
   overflow-x: scroll;
-  border: #000 solid 2px;
   max-width: 1440px;
 }
 #shop .shoplist::-webkit-scrollbar {
@@ -227,28 +231,27 @@ main {
   background-color: #6F635B;
 }
 #shop .shoplist::-webkit-scrollbar-track {
-  margin: 0 500px;
+  margin: 0 200px;
   border-radius: 99px;
   border: #B7B7AB solid 2px;
   background-color: #ECE6D3;
 }
-#shop .shoplist a {
+#shop .shoplist .pdulist {
+  display: flex;
+}
+#shop .shoplist .pdulist a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: #000 solid 2px;
-  width: 100%;
+  width: 264px;
   height: 85%;
   margin: 0 8px;
 }
-#shop .shoplist a img {
+#shop .shoplist .pdulist a img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 264px;
-  height: 100%;
-  border: #000 solid 2px;
 }
 
 #fashion {
@@ -320,7 +323,7 @@ footer .footerlist ul li a {
 
 /* 商品頁 shoplist */
 #shoplist {
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-start;
   padding-top: 15vh;
   height: auto;
@@ -329,7 +332,7 @@ footer .footerlist ul li a {
   display: flex;
   flex-direction: column;
   width: 10%;
-  height: 60vh;
+  height: 80vh;
 }
 #shoplist .shoplist-menu h2 {
   font-size: 1.25rem;
@@ -359,20 +362,19 @@ footer .footerlist ul li a {
   width: 30%;
   height: 4vh;
   font-size: 0.8rem;
-  border-radius: 10px;
 }
 #shoplist .shoplist-main {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
   height: 100%;
-  border: #000 solid 2px;
 }
 #shoplist .shoplist-main .carouselimg {
-  width: 100%;
+  width: 95%;
   height: 60vh;
   padding-top: 50px;
-  border: #000 solid 2px;
 }
 #shoplist .shoplist-main .carouselimg a {
   width: 100%;
@@ -381,28 +383,34 @@ footer .footerlist ul li a {
 #shoplist .shoplist-main .carouselimg a img {
   object-fit: cover;
 }
+#shoplist .shoplist-main .commodity {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 #shoplist .shoplist-main .commodity h2 {
   font-size: 1.5rem;
   color: #221712;
   font-weight: 800;
   margin: 5px 0;
+  width: 90%;
 }
 #shoplist .shoplist-main .commodity .commoditylist {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  width: 100%;
+  width: 95%;
   height: 100%;
-  border: #000 solid 2px;
 }
 #shoplist .shoplist-main .commodity .commoditylist a {
   display: flex;
   flex-direction: column;
   width: 350px;
   height: 480px;
-  margin: auto;
-  margin-bottom: 20px;
-  border: #000 solid 2px;
+  margin: 15px auto;
 }
 #shoplist .shoplist-main .commodity .commoditylist a img {
   width: 100%;
@@ -425,15 +433,16 @@ footer .footerlist ul li a {
   width: 10%;
   height: 5vh;
   font-size: 1.25rem;
-  border-radius: 10px;
 }
 
 /* 商品頁面 shop */
-#shop {
+#shopbox {
+  display: flex;
+  flex-direction: column;
   height: auto;
   padding-top: 15vh;
 }
-#shop .product {
+#shopbox .product {
   width: 80%;
   height: 55vh;
   display: flex;
@@ -441,58 +450,58 @@ footer .footerlist ul li a {
   align-items: center;
   margin-bottom: 100px;
 }
-#shop .product .product-img {
+#shopbox .product .product-img {
   display: flex;
   justify-content: space-between;
   width: 50%;
   height: 100%;
 }
-#shop .product .product-img .proimglist {
+#shopbox .product .product-img .proimglist {
   width: 20%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-#shop .product .product-img .proimglist img {
+#shopbox .product .product-img .proimglist img {
   width: 100%;
   height: 95%;
   object-fit: cover;
 }
-#shop .product .product-img .showimglist {
+#shopbox .product .product-img .showimglist {
   display: flex;
   justify-content: center;
   width: 78%;
   height: 100%;
 }
-#shop .product .product-img .showimglist img {
+#shopbox .product .product-img .showimglist img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#shop .product .product-ifon {
+#shopbox .product .product-ifon {
   display: flex;
   flex-direction: column;
   width: 48%;
   height: 100%;
 }
-#shop .product .product-ifon .product-title {
+#shopbox .product .product-ifon .product-title {
   color: #221712;
 }
-#shop .product .product-ifon .product-title h3 {
+#shopbox .product .product-ifon .product-title h3 {
   font-size: 2rem;
   font-weight: 900;
 }
-#shop .product .product-ifon .product-title p {
+#shopbox .product .product-ifon .product-title p {
   font-size: 0.75rem;
   margin-bottom: 20px;
 }
-#shop .product .product-ifon .product-title h2 {
+#shopbox .product .product-ifon .product-title h2 {
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 10px;
 }
-#shop .product .product-ifon .choice {
+#shopbox .product .product-ifon .choice {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -501,25 +510,25 @@ footer .footerlist ul li a {
   margin-bottom: 15px;
   border-bottom: solid 2px #221712;
 }
-#shop .product .product-ifon .choice h2 {
+#shopbox .product .product-ifon .choice h2 {
   font-size: 1rem;
   font-weight: 800;
 }
-#shop .product .product-ifon .product_buy {
+#shopbox .product .product-ifon .product_buy {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 70%;
   height: 10vh;
 }
-#shop .product .product-ifon .product_buy .amount {
+#shopbox .product .product-ifon .product_buy .amount {
   width: 25%;
   height: 5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#shop .product .product-ifon .product_buy .amount button {
+#shopbox .product .product-ifon .product_buy .amount button {
   background-color: #6F635B;
   color: #F5F5F5;
   align-items: center;
@@ -528,17 +537,16 @@ footer .footerlist ul li a {
   line-height: 100%;
   font-weight: 800;
   font-size: 1rem;
-  border-radius: 10px;
 }
-#shop .product .product-ifon .product_buy .amount span {
+#shopbox .product .product-ifon .product_buy .amount span {
   font-size: 1rem;
 }
-#shop .product .product-ifon .product_buy .buy-btn {
+#shopbox .product .product-ifon .product_buy .buy-btn {
   width: 30%;
   height: 5vh;
   align-items: center;
 }
-#shop .product .product-ifon .product_buy .buy-btn button {
+#shopbox .product .product-ifon .product_buy .buy-btn button {
   background-color: #771011;
   color: #F5F5F5;
   width: 100%;
@@ -546,7 +554,7 @@ footer .footerlist ul li a {
   font-weight: 800;
   font-size: 1rem;
 }
-#shop .introduction {
+#shopbox .introduction {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -554,26 +562,26 @@ footer .footerlist ul li a {
   height: 60vh;
   padding-top: 15px;
 }
-#shop .introduction .intcho {
+#shopbox .introduction .intcho {
   display: flex;
   width: 80%;
   border-bottom: #000 solid;
 }
-#shop .introduction .intcho #introduce {
+#shopbox .introduction .intcho #introduce {
   background-color: #771011;
   margin-left: 5px;
 }
-#shop .introduction .intcho #evaluate {
+#shopbox .introduction .intcho #evaluate {
   background-color: #6F635B;
 }
-#shop .introduction .intcho button {
+#shopbox .introduction .intcho button {
   color: #F5F5F5;
   width: 20%;
   height: 5vh;
   font-weight: 800;
   font-size: 1rem;
 }
-#shop .introduction .inttestlist {
+#shopbox .introduction .inttestlist {
   width: 80%;
   height: 40vh;
   padding: 10px;
@@ -581,14 +589,14 @@ footer .footerlist ul li a {
   flex-direction: column;
   justify-content: space-evenly;
 }
-#shop .introduction .inttestlist p {
+#shopbox .introduction .inttestlist p {
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
-#shop .moretitle {
+#shopbox .moretitle {
   width: 80%;
 }
-#shop .morelist {
+#shopbox .morelist {
   width: 100%;
   height: 40vh;
   display: flex;
@@ -597,23 +605,23 @@ footer .footerlist ul li a {
   overflow: auto;
   margin-bottom: 10vh;
 }
-#shop .morelist .moreproduct {
+#shopbox .morelist .moreproduct {
   width: 1440px;
   height: 100%;
   display: flex;
   align-content: flex-start;
 }
-#shop .morelist .moreproduct a {
+#shopbox .morelist .moreproduct a {
   width: 300px;
   height: 280px;
   margin: 5px;
 }
-#shop .morelist .moreproduct a img {
+#shopbox .morelist .moreproduct a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#shop .morelist .moreproduct a .price {
+#shopbox .morelist .moreproduct a .price {
   width: 95%;
   display: flex;
   justify-content: space-between;
@@ -792,7 +800,6 @@ footer .footerlist ul li a {
   line-height: 100%;
   font-weight: 800;
   font-size: 1rem;
-  border-radius: 10px;
 }
 #checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .product_buy .amount span {
   font-size: 1rem;
