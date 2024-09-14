@@ -124,6 +124,15 @@ section {
   color: #221712;
 }
 
+.more {
+  display: flex;
+  justify-content: flex-end;
+}
+.more a {
+  display: flex;
+  align-items: flex-end;
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -150,14 +159,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 30%;
   height: 6vh;
+  justify-content: space-between;
 }
 #topbar .navigation .menulist {
   display: flex;
   align-items: center;
-  margin: 0 16px;
-  width: 100%;
+  width: 60%;
   height: 100%;
   justify-content: space-between;
 }
@@ -168,10 +177,22 @@ main {
 #topbar .navigation .iconlist {
   display: flex;
   align-items: center;
-  margin: 0 16px;
-  width: 40%;
+  width: 32%;
   height: 100%;
   justify-content: space-between;
+}
+#topbar .navigation .iconlist li {
+  width: 31%;
+  height: 100%;
+}
+#topbar .navigation .iconlist li a {
+  width: 100%;
+  height: 100%;
+}
+#topbar .navigation .iconlist li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #new {
@@ -185,10 +206,6 @@ main {
   width: 25%;
   height: 40vh;
   margin-left: 10%;
-}
-#new .item .arrow {
-  display: flex;
-  justify-content: flex-end;
 }
 #new .new_img {
   width: 60%;
@@ -210,6 +227,7 @@ main {
   width: 90%;
   height: 10vh;
   max-width: 1440px;
+  margin-bottom: 20px;
 }
 #shop .caption h2 {
   font-size: 2rem;
