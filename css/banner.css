@@ -1,0 +1,175 @@
+/* Section-1 Styles */
+#banner-1 {
+    color: #fff;
+    background-color: #222;
+  }
+  
+  #banner-1 .content-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #banner-1 .content-slider input {
+    display: none;
+  }
+  
+  #banner-1 .content-slider .slider {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+  }
+  
+  #banner-1 .content-slider .slider .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: all 0.5s ease;
+  }
+  
+  #banner-1 .content-slider .slider .banner .banner-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-shadow: 0 0 10px #222;
+  }
+
+  
+
+  #banner-1 .content-slider .slider a{
+    width: 100%;
+    height: 100%;
+  }
+  
+  #banner-1 .content-slider .slider  #top-banner-1 {
+    background: url('../img/index/banner-1.svg') no-repeat center center;
+    background-size: cover;
+  }
+  
+  #banner-1 .content-slider .slider #top-banner-2 {
+    background: url('../img/index/banner-2.svg') no-repeat center center;
+    background-size: cover;
+  }
+  
+  #banner-1 .content-slider .slider #top-banner-3 {
+    background: url('../img/index/banner-3.svg') no-repeat center center;
+    background-size: cover;
+  }
+  
+
+  
+  #banner-1 .content-slider nav {
+    position: absolute;
+    bottom: 0.5em;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+  }
+  
+
+  
+  #banner-1 .content-slider nav .controls label {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    height: 3.1em;
+    overflow: hidden;
+    margin: 0 1em;
+    padding-top: 1em;
+    text-align: left;
+    text-transform: uppercase;
+    color: #F5F5F5;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 20;
+  }
+  
+  
+  
+  
+  #banner-1 .content-slider nav .controls label .progressbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background:#F5F5F5 ;
+    z-index: 100;
+  }
+  
+  #banner-1 .content-slider nav .controls label .progressbar .progressbar-fill {
+    position: inherit;
+    width: inherit;
+    height: inherit;
+    margin-left: -100%;
+    background: #6F635B;
+  }
+  
+  #banner-1 .content-slider nav .controls label span {
+    font-size: 1.4em;
+    font-weight: 700;
+  }
+  
+  #banner-1 .content-slider #banner1:checked~.slider #top-banner-1,
+  #banner-1 .content-slider #banner2:checked~.slider #top-banner-2,
+  #banner-1 .content-slider #banner3:checked~.slider #top-banner-3
+{
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  #banner-1 .content-slider #banner1:checked~nav label:nth-of-type(1),
+  #banner-1 .content-slider #banner2:checked~nav label:nth-of-type(2),
+  #banner-1 .content-slider #banner3:checked~nav label:nth-of-type(3)
+  {
+    cursor: default;
+    color: #fff;
+    transition: all 0.5s;
+  }
+  
+  #banner-1 .content-slider #banner1:checked~nav label:nth-of-type(1) .progressbar,
+  #banner-1 .content-slider #banner2:checked~nav label:nth-of-type(2) .progressbar,
+  #banner-1 .content-slider #banner3:checked~nav label:nth-of-type(3) .progressbar
+{    background: #fff;
+  }
+  
+  #banner-1 .content-slider #banner1:checked~nav label:nth-of-type(1) .progressbar-fill,
+  #banner-1 .content-slider #banner2:checked~nav label:nth-of-type(2) .progressbar-fill,
+  #banner-1 .content-slider #banner3:checked~nav label:nth-of-type(3) .progressbar-fill{
+    animation: progressBarFill 5s linear;
+  }
+  
+  /* Animations */
+  @keyframes progressBarFill {
+    from {
+      margin-left: -100%;
+    }
+  
+    to {
+      margin-left: 0;
+    }
+  }
+  
+  /* 小型設備 */
+  @media (max-width:640px) {
+    /* 裡面內容要跟本來寫的群組名稱一模一樣 */
+    #banner-1 .content-slider .slider .banner .banner-inner-wrapper h2 {
+      font-size: 2rem;
+    }
+    #banner-1 .content-slider .slider .banner .banner-inner-wrapper h1 {
+      font-size: 3.5rem;
+    }
+    #banner-1 .content-slider nav .controls label {
+      margin: 0 5px;
+    }
+  }

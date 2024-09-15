@@ -140,6 +140,11 @@ img {
 }
 
 /* 主要顯示區 */
+body {
+  color: #221712;
+  background-color: #F5F5F5;
+}
+
 main {
   background-color: #F5F5F5;
 }
@@ -652,7 +657,15 @@ footer .footerlist ul li a {
   align-items: center;
   padding-top: 0;
 }
-#login .close {
+
+#signup {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+}
+
+.close {
   width: 75%;
   height: 10vh;
   display: flex;
@@ -660,18 +673,24 @@ footer .footerlist ul li a {
   align-items: center;
   padding-right: 2%;
 }
-#login .content {
+.close img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.content {
   width: 60%;
   height: 70vh;
   display: flex;
   justify-content: space-between;
   border: #C0BFB2 solid 1px;
 }
-#login .content .login_img {
+.content .login_img {
   width: 45%;
   height: 100%;
 }
-#login .content .login_item {
+.content .login_item {
   width: 55%;
   height: 100%;
   display: flex;
@@ -681,19 +700,19 @@ footer .footerlist ul li a {
   padding-top: 10vh;
   line-height: 140%;
 }
-#login .content .login_item h2 {
+.content .login_item h2 {
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 42px;
 }
-#login .content .login_item .user {
+.content .login_item .user {
   width: 80%;
   max-width: 400px;
 }
-#login .content .login_item .user h3 {
+.content .login_item .user h3 {
   font-size: 0.75rem;
 }
-#login .content .login_item .user input {
+.content .login_item .user input {
   width: 100%;
   height: 4vh;
   margin-bottom: 10px;
@@ -702,34 +721,52 @@ footer .footerlist ul li a {
   border-radius: 10px;
   outline: none;
 }
-#login .content .login_item .user p {
+.content .login_item .user p {
   display: flex;
   justify-content: flex-end;
 }
-#login .content .login_item .user p a {
+.content .login_item .user p a {
   font-size: 0.75rem;
   color: #771011;
   font-weight: bold;
   right: 0;
 }
-#login .content .login_item .login_btn {
+.content .login_item .login_btn {
   padding: 10px 44px;
   background-color: #ECE6D3;
   font-size: 1rem;
   border-radius: 10px;
   margin: 27px 0;
 }
-#login .content .login_item .checkid {
+.content .login_item .checkid {
   width: 80%;
   max-width: 400px;
   display: flex;
   justify-content: center;
   border-bottom: #C0BFB2 solid;
 }
-#login .content .login_item .checkid p {
+.content .login_item .checkid p {
   margin-left: 10px;
   color: #771011;
   font-weight: bold;
+  cursor: pointer;
+}
+.content .login_item .connect {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 20%;
+}
+
+.custom-fb-button {
+  background-image: url(../img/login/Facebook\ Circled.svg);
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 /* checkout 結帳畫面 */
@@ -905,4 +942,6 @@ footer .footerlist ul li a {
   margin-top: 5vh;
   background-color: #771011;
   color: #F5F5F5;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* 模擬器畫面 emulator *//*# sourceMappingURL=style.css.map */

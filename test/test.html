@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-In</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <!-- Google Sign-In onload -->
+    <div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-login_uri="YOUR_LOGIN_URI"
+         data-itp_support="true">
+    </div>
+
+    <!-- Google Sign-In button -->
+    <div class="g_id_signin"
+         data-type="icon"
+         data-shape="circle"
+         data-theme="outline"
+         data-text="signin_with"
+         data-size="large">
+    </div>
+</body>
+</html>

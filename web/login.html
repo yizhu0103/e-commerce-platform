@@ -11,63 +11,132 @@
 <body>
     <main>
         <section id="login">
-            <div class="close">icon</div>
+            <div class="close"><a href="../index.html">回首頁</a></div>
             <div class="content">
                 <div class="login_img"><img src="../img/banner-1.svg" alt=""></div>
                 <div class="login_item">
                     <h2>登入</h2>
                     <div class="user">
                         <h3>信箱</h3>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="usermail-login">
                     </div>
                     <div class="user">
                         <h3>密碼</h3>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="userpsw-login">
                         <p><a href="#">忘記密碼</a></p>
                     </div>
                     <button class="login_btn">登入</button>
                     <div class="checkid">
                         <h4>還沒有帳號?</h4>
-                        <p>註冊</p>
+                        <p class="register">註冊</p>
                     </div>
-                    <div class="connect"></div>
+                    <div class="connect">
+
+                        <div id="g_id_onload" data-client_id="5432xxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com"
+                            data-context="signin" data-ux_mode="popup" data-callback="onSignIn2"
+                            data-auto_prompt="false"></div>
+
+                        <div id="g_id_onload" data-client_id="https://www.ntub.edu.tw/" data-context="signin"
+                            data-ux_mode="popup" data-login_uri="google" data-itp_support="true">
+                        </div>
+
+                        <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="filled_blue"
+                            data-text="signin_with" data-size="large" data-logo_alignment="center" data-width="20">
+                        </div>
+
+
+                        <div class="custom-fb-button" id="fb-login-btn"></div>
+
+                        <!-- <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous"
+                            src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v20.0&appId=1046843650303180"
+                            nonce="M0qIEyrl"></script>
+                        <div class="fb-login-button " data-width="" data-size="large" data-shape="rounded"
+                            data-button-type="" data-layout="rounded" data-auto-logout-link="false"
+                            data-use-continue-as="false"></div>
+                    </div>
+                </div> -->
+
+
+                    </div>
                 </div>
-            </div>
-            </div>
         </section>
 
-        <section id="login">
-            <div class="close">icon</div>
+        <section id="signup" style="display: none;">
+            <div class="close"><a href="../index.html">回首頁</a></div>
             <div class="content">
                 <div class="login_item">
                     <h2>註冊</h2>
                     <div class="user">
                         <h3>姓名</h3>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="username-sigup">
                     </div>
                     <div class="user">
                         <h3>E-mail</h3>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="usermail-sigup">
                     </div>
                     <div class="user">
                         <h3>密碼</h3>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="userpsw-sigup">
                     </div>
                     <button class="login_btn">註冊</button>
                     <div class="checkid">
                         <h4>已經有帳號?</h4>
-                        <p>登入</p>
+                        <p class="register">登入</p>
                     </div>
-                    <div class="connect"></div>
+                    <div class="connect">
+
+                        <div id="g_id_onload" data-client_id="5432xxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com"
+                            data-context="signin" data-ux_mode="popup" data-callback="onSignIn2"
+                            data-auto_prompt="false"></div>
+
+                        <div id="g_id_onload" data-client_id="https://www.ntub.edu.tw/" data-context="signin"
+                            data-ux_mode="popup" data-login_uri="google" data-itp_support="true">
+                        </div>
+
+                        <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="filled_blue"
+                            data-text="signin_with" data-size="large">
+                        </div>
+
+
+                        <div class="custom-fb-button" id="fb-login-btn"></div>
+                    </div>
                 </div>
                 <div class="login_img"><img src="../img/banner-1.svg" alt=""></div>
-               
+
             </div>
             </div>
         </section>
         <!-- <section id="signup"></section> -->
 
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: 'YOUR_APP_ID', // 替換為你的 Facebook 應用程式 ID
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v16.0'
+                });
+            };
+
+            // 監聽自訂按鈕的點擊事件
+            document.getElementById('fb-login-btn').addEventListener('click', function () {
+                FB.login(function (response) {
+                    if (response.status === 'connected') {
+                        // 已登入
+                        alert('登入成功！');
+                    } else {
+                        // 未登入
+                        alert('登入失敗或已取消！');
+                    }
+                }, { scope: 'public_profile,email' }); // 欲請求的權限
+            });
+        </script>
+
     </main>
 </body>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="../js/login.js"></script>
 
 </html>
