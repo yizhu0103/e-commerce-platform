@@ -402,6 +402,7 @@ footer .footerlist ul li a {
 #shoplist .shoplist-main .carouselimg a {
   width: 100%;
   height: 100%;
+  padding-bottom: 10px;
 }
 #shoplist .shoplist-main .carouselimg a img {
   object-fit: cover;
@@ -434,14 +435,34 @@ footer .footerlist ul li a {
   width: 350px;
   height: 480px;
   margin: 15px auto;
+  transition: transform 0.4s;
+}
+#shoplist .shoplist-main .commodity .commoditylist a:hover img {
+  filter: brightness(75%);
+}
+#shoplist .shoplist-main .commodity .commoditylist a h3 {
+  font-size: 1rem;
+  color: #221712;
+  font-weight: 900;
 }
 #shoplist .shoplist-main .commodity .commoditylist a img {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 85%;
+  object-fit: cover;
+  margin-bottom: 5px;
 }
 #shoplist .shoplist-main .commodity .commoditylist a .price {
   display: flex;
   justify-content: space-between;
+}
+#shoplist .shoplist-main .commodity .commoditylist a .price h5 {
+  font-size: 0.9rem;
+  color: #221712;
+}
+#shoplist .shoplist-main .commodity .commoditylist a .price h4 {
+  font-size: 1.25rem;
+  color: #221712;
+  font-weight: 600;
 }
 #shoplist .morecommdity {
   width: 100%;
@@ -619,7 +640,8 @@ footer .footerlist ul li a {
   font-weight: 800;
   font-size: 1rem;
 }
-#shopbox .introduction .inttestlist, #shopbox .introduction .evaluate {
+#shopbox .introduction .inttestlist,
+#shopbox .introduction .evaluate {
   width: 80%;
   height: 40vh;
   padding: 10px;
@@ -627,7 +649,8 @@ footer .footerlist ul li a {
   flex-direction: column;
   justify-content: space-evenly;
 }
-#shopbox .introduction .inttestlist p, #shopbox .introduction .evaluate p {
+#shopbox .introduction .inttestlist p,
+#shopbox .introduction .evaluate p {
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
