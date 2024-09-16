@@ -145,7 +145,8 @@ section {
 .more {
     display: flex;
     justify-content: flex-end;
-    a{
+
+    a {
         display: flex;
         align-items: flex-end;
     }
@@ -160,8 +161,8 @@ img {
 
 
 /* 主要顯示區 */
-body{
-    color: map-get( $color , font-color);
+body {
+    color: map-get($color , font-color);
     background-color: map-get($color, bkgcolor);
 }
 
@@ -188,7 +189,7 @@ main {
 
         .menulist {
             @include flex-align-center;
-            
+
             width: 60%;
             height: 100%;
             justify-content: space-between;
@@ -205,21 +206,22 @@ main {
             width: 32%;
             height: 100%;
             justify-content: space-between;
-            
-          li{
-            width: 31%;
-            height: 100%;
-            
-            a{
-                width: 100%;
+
+            li {
+                width: 31%;
                 height: 100%;
-                img{
+
+                a {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
-          }
         }
     }
 }
@@ -237,7 +239,7 @@ main {
         height: 40vh;
         margin-left: 10%;
 
-     
+
     }
 
     .new_img {
@@ -420,7 +422,7 @@ footer {
         @include flex-column;
         width: 10%;
         height: 80vh;
-        
+
 
 
         h2 {
@@ -453,7 +455,7 @@ footer {
                     width: 30%;
                     height: 4vh;
                     font-size: 0.8rem;
-                    
+
 
                 }
 
@@ -463,7 +465,7 @@ footer {
     }
 
     .shoplist-main {
-        @include  flex-column-center ;
+        @include flex-column-center;
         width: 70%;
         height: 100%;
 
@@ -472,8 +474,8 @@ footer {
             width: 95%;
             height: 60vh;
             padding-top: 50px;
-         
-            
+
+
 
             a {
                 width: 100%;
@@ -493,7 +495,7 @@ footer {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-       
+
 
 
             h2 {
@@ -502,7 +504,7 @@ footer {
                 font-weight: 800;
                 margin: 5px 0;
                 width: 90%;
-                
+
             }
 
             .commoditylist {
@@ -511,16 +513,16 @@ footer {
                 align-content: flex-start;
                 width: 95%;
                 height: 100%;
-                
-                
+
+
 
                 a {
                     @include flex-column;
                     width: 350px;
                     height: 480px;
                     margin: 15px auto;
-                    
-                    
+
+
 
                     img {
                         width: 100%;
@@ -549,7 +551,7 @@ footer {
             width: 10%;
             height: 5vh;
             font-size: 1.25rem;
-            
+
 
         }
 
@@ -571,7 +573,7 @@ footer {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 100px;
- 
+
 
         .product-img {
             display: flex;
@@ -585,11 +587,25 @@ footer {
                 @include flex-column;
                 justify-content: space-between;
 
-                img {
-                    width: 100%;
-                    height: 95%;
-                    object-fit: cover;
+                .box {
+                    width: 90%;
+                    height: 22%;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                        object-fit: cover;
+                        transition: transform 0.5s ease;
+
+                        &:hover {
+                            transform: scale(2);
+                        }
+                    }
+
                 }
+
             }
 
             .showimglist {
@@ -672,7 +688,12 @@ footer {
                         line-height: 100%;
                         font-weight: 800;
                         font-size: 1rem;
-                        
+                        transition: transform 0.5s ;
+                        &:hover{
+                            background-color: map-get($color , primary);
+                            color: map-get($color , bkgcolor);
+                        }
+
                     }
 
                     span {
@@ -738,7 +759,7 @@ footer {
             }
         }
 
-        .inttestlist {
+        .inttestlist,.evaluate {
             width: 80%;
             height: 40vh;
             padding: 10px;
@@ -751,6 +772,10 @@ footer {
                 margin-bottom: 5px;
             }
         }
+        .evaluate{
+            display: none;
+        }
+     
     }
 
     .moretitle {
@@ -805,6 +830,7 @@ footer {
     align-items: center;
     padding-top: 0;
 }
+
 #signup {
     flex-direction: column;
     justify-content: center;
@@ -813,120 +839,122 @@ footer {
 }
 
 
-    .close {
-        width: 75%;
-        height: 10vh;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-right: 2%;
-        img{
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-        }
+.close {
+    width: 75%;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+
+    img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+}
+
+.content {
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    border: map-get($color , assistGray) solid 1px;
+
+
+    .login_img {
+        width: 45%;
+        height: 100%;
     }
 
-    .content {
-        width: 60%;
-        height: 70vh;
+    .login_item {
+        width: 55%;
+        height: 100%;
         display: flex;
-        justify-content: space-between;
-        border: map-get($color , assistGray) solid 1px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 10vh;
+        line-height: 140%;
 
 
-        .login_img {
-            width: 45%;
-            height: 100%;
+        h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 42px;
         }
 
-        .login_item {
-            width: 55%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 10vh;
-            line-height: 140%;
+        .user {
+            width: 80%;
+            max-width: 400px;
 
 
-            h2 {
-                font-size: 2rem;
-                font-weight: 900;
-                margin-bottom: 42px;
+            h3 {
+                font-size: 0.75rem;
             }
 
-            .user {
-                width: 80%;
-                max-width: 400px;
-
-
-                h3 {
-                    font-size: 0.75rem;
-                }
-
-                input {
-                    width: 100%;
-                    height: 4vh;
-                    margin-bottom: 10px;
-                    padding-left: 10px;
-                    border: map-get($color , font-color) solid 1px;
-                    border-radius: 10px;
-                    outline: none;
-                }
-
-                p {
-                    display: flex;
-                    justify-content: flex-end;
-
-                    a {
-                        font-size: 0.75rem;
-                        color: map-get($color , primary);
-                        font-weight: bold;
-                        right: 0;
-                    }
-
-                }
-
-
-            }
-
-            .login_btn {
-                padding: 10px 44px;
-                background-color: map-get($color , secondary);
-                font-size: 1rem;
+            input {
+                width: 100%;
+                height: 4vh;
+                margin-bottom: 10px;
+                padding-left: 10px;
+                border: map-get($color , font-color) solid 1px;
                 border-radius: 10px;
-                margin: 27px 0;
+                outline: none;
             }
 
-            .checkid {
-                width: 80%;
-                max-width: 400px;
+            p {
                 display: flex;
-                justify-content: center;
-                border-bottom: map-get($color , assistGray) solid;
+                justify-content: flex-end;
 
-                p {
-                    margin-left: 10px;
+                a {
+                    font-size: 0.75rem;
                     color: map-get($color , primary);
                     font-weight: bold;
-                    cursor: pointer;
+                    right: 0;
                 }
-                
 
             }
-            .connect{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: 10px;
-                width: 20%;
 
-            }
+
         }
 
+        .login_btn {
+            padding: 10px 44px;
+            background-color: map-get($color , secondary);
+            font-size: 1rem;
+            border-radius: 10px;
+            margin: 27px 0;
+        }
+
+        .checkid {
+            width: 80%;
+            max-width: 400px;
+            display: flex;
+            justify-content: center;
+            border-bottom: map-get($color , assistGray) solid;
+
+            p {
+                margin-left: 10px;
+                color: map-get($color , primary);
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+
+        }
+
+        .connect {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 20%;
+
+        }
     }
+
+}
 
 .custom-fb-button {
     background-image: url(../img/login/Facebook\ Circled.svg);
@@ -1160,5 +1188,6 @@ footer {
 
 
     }
-} 
+}
+
 /* 模擬器畫面 emulator */

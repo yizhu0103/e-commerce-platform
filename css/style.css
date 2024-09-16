@@ -486,10 +486,20 @@ footer .footerlist ul li a {
   flex-direction: column;
   justify-content: space-between;
 }
-#shopbox .product .product-img .proimglist img {
+#shopbox .product .product-img .proimglist .box {
+  width: 90%;
+  height: 22%;
+  overflow: hidden;
+}
+#shopbox .product .product-img .proimglist .box img {
   width: 100%;
-  height: 95%;
+  height: 100%;
+  cursor: pointer;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+#shopbox .product .product-img .proimglist .box img:hover {
+  transform: scale(2);
 }
 #shopbox .product .product-img .showimglist {
   display: flex;
@@ -560,6 +570,11 @@ footer .footerlist ul li a {
   line-height: 100%;
   font-weight: 800;
   font-size: 1rem;
+  transition: transform 0.5s;
+}
+#shopbox .product .product-ifon .product_buy .amount button:hover {
+  background-color: #771011;
+  color: #F5F5F5;
 }
 #shopbox .product .product-ifon .product_buy .amount span {
   font-size: 1rem;
@@ -604,7 +619,7 @@ footer .footerlist ul li a {
   font-weight: 800;
   font-size: 1rem;
 }
-#shopbox .introduction .inttestlist {
+#shopbox .introduction .inttestlist, #shopbox .introduction .evaluate {
   width: 80%;
   height: 40vh;
   padding: 10px;
@@ -612,9 +627,12 @@ footer .footerlist ul li a {
   flex-direction: column;
   justify-content: space-evenly;
 }
-#shopbox .introduction .inttestlist p {
+#shopbox .introduction .inttestlist p, #shopbox .introduction .evaluate p {
   font-size: 1.2rem;
   margin-bottom: 5px;
+}
+#shopbox .introduction .evaluate {
+  display: none;
 }
 #shopbox .moretitle {
   width: 80%;
