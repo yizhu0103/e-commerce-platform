@@ -7,11 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/banner.css">
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
 
     <main>
+       
         <section id="banner-1">
             <div class="content-slider">
                 <!-- 讓js換圖片的切換器(隱藏狀態) -->
@@ -86,27 +88,27 @@
                 </ul>
             </nav>
         </header>
-        <section id="new">
+        <section id="new" >
 
-            <div class="item">
+            <div class="item smoove">
                 <h3>最新商品</h3>
                 <h2>寧靜時光大衣</h2>
                 <p>以柔和的棕色為主調，展現出低調且高雅的風格，適合各種場合。經典的寬鬆剪裁不僅提升穿著舒適度，還能巧妙修飾身形。無論是搭配休閒裝扮還是正式場合，都能輕鬆駕馭，是本季必備的百搭單品。</p>
                 <div class="more"><a href="./web/shoplist.html">more <img src="./img/index/icon-arrow.svg" alt=""></a>
                 </div>
             </div>
-            <div class="new_img"><img src="./img/index/banner-1.svg" alt=""></div>
+            <div class="new_img "><img src="./img/index/banner-1.svg" alt=""></div>
 
         </section>
 
         <section id="shop">
-            <div class="caption">
+            <div class="caption ">
                 <h2>商品種類</h2>
                 <div class="more"><a href="./web/shoplist.html">more <img src="./img/index/icon-arrow.svg" alt=""></a>
                 </div>
             </div>
 
-            <div class="shoplist">
+            <div class="shoplist ">
                 <div class="pdulist">
                     <a href="./web/shoplist.html">
                         <img src="./img/index/shop-1.svg" alt="">
@@ -143,7 +145,7 @@
 
         <section id="fashion">
 
-            <div class="item fashbox">
+            <div class="item fashbox smoove" data-move-x="-100px">
                 <h3>模擬器</h3>
                 <h2>日常搭配</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis omnis deserunt, labore distinctio
@@ -152,18 +154,21 @@
                 <div class="more"><a href="./web/emulator.html">more <img src="./img/index/icon-arrow-w.svg" alt=""></a>
                 </div>
             </div>
+            <video src="./img/index/fashion.mp4" autoplay muted loop></video>
         </section>
 
         <section id="about">
 
-            <div class="about"><img src="./img/aboutimg.svg" alt=""></div>
-            <div class="item aboutbox">
+            <div class="about smoove" data-move-y="300px"><img src="./img/aboutimg.svg" alt=""></div>
+            <div class="item aboutbox smoove" data-move-y="-300px">
                 <h3>關於我們</h3>
                 <h2>品牌背景</h2>
                 <p>Elegancia誕生於巴黎，這個城市自古以來就是時尚的代名詞。我們的品牌靈感來自於巴黎女性的優雅、獨立和自信。我們致力於為現代女性提供既時尚又實用的服飾，讓她們在每一個場合都能展現出最佳的自己。
                 </p>
                 <div class="more"><a href="#">more <img src="./img/index/icon-arrow.svg" alt=""></a></div>
             </div>
+          
+
         </section>
         <footer>
             <div class="footerlogo">
@@ -173,16 +178,21 @@
 
             <div class="footerlist">
                 <ul>
-                    <li><a href="./shoplist.html">最新</a></li>
-                    <li><a href="./shoplist.html">分類</a></li>
-                    <li><a href="./emulator.html">模擬器</a></li>
+                    <li><a href="./web/shoplist.html">最新</a></li>
+                    <li><a href="./web/shoplist.html">分類</a></li>
+                    <li><a href="./web/emulator.html">模擬器</a></li>
                     <li><a href="#">關於</a></li>
+                   
                 </ul>
+                
             </div>
+            <!-- <div id="gotop"><img src="./img/index/arrowtop.svg" alt=""></div> -->
         </footer>
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<!-- jQuery Smoove套件 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
 <script src="./js/html.js"></script>
 
 </html>

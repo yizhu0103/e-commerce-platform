@@ -12,42 +12,21 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+        <!-- 共用元件 -->
+        <script type="text/babel" src="../js/Element.js"></script>
+
 
 
 </head>
 
 <body>
-    <header id="topbar">
-
-        <div class="logo"><a href="../index.html">
-                <h1>Elegancia</h1>
-            </a></div>
-        <nav class="navigation">
-            <ul class="menulist">
-                <li><a href="./shoplist.html">最新</a></li>
-                <li><a href="./shoplist.html">分類</a></li>
-                <li><a href="./emulator.html">模擬器</a></li>
-                <li><a href="#">關於</a></li>
-            </ul>
-            <ul class="iconlist">
-                <li><a href="#"><img src="../img/index/search.svg" alt=""></a></li>
-                <li><a href="./login.html"><img src="../img/index/member.svg" alt=""></a></li>
-                <li><a href="./checkout.html"><img src="../img/index/bag.svg" alt=""></a></li>
-
-            </ul>
-        </nav>
-    </header>
-
     <main>
-
-        <!-- 產品 -->
-
-
 
         <div id="root"></div>
         <script type="text/babel">
 
             const { useState } = React;
+
 
             function App() {
                 const [num, setNum] = useState(0);
@@ -79,9 +58,63 @@
                 };
 
 
+                const products = [
+                    {
+                        id: 1,
+                        title: '寧靜時光大衣',
+                        nature: '最新商品',
+                        img: '../img/index/banner-1.svg',
+                        price: '9,999',
+                        alt: 'Product Image',
+                        appraise: '非常好穿'
+                    }, {
+                        id: 2,
+                        title: '西裝外套',
+                        nature: '最新商品',
+                        img: '../img/index/banner-2.svg',
+                        price: '9,999',
+                        alt: 'Product Image',
+                        appraise: '超級好穿'
+                    }, {
+                        id: 3,
+                        title: '好穿的褲子',
+                        nature: '最新商品',
+                        img: '../img/index/banner-3.svg',
+                        price: '9,999',
+                        alt: 'Product Image',
+                        appraise: '宇宙好穿'
+                    }, {
+                        id: 4,
+                        title: '羊絨開衫',
+                        nature: '',
+                        img: '../img/index/shop-1.svg',
+                        price: '9,999',
+                        alt: 'Product Image',
+                        appraise: '穿上不後悔'
+                    }, {
+                        id: 5,
+                        title: '雪紡襯衫',
+                        nature: '',
+                        img: '../img/index/shop-2.svg',
+                        price: '8,888',
+                        alt: 'Product Image',
+                        appraise: '超級貴不好穿'
+                    }, {
+                        id: 6,
+                        title: '職業裝',
+                        nature: '',
+                        img: '../img/index/shop-3.svg',
+                        price: '7,777',
+                        alt: 'Product Image',
+                        appraise: '----'
+                    }
+                ];
+
+
 
                 return (
                     <>
+                    <Header/>
                         <section id="shopbox">
                             <div class="product">
                                 <div class="product-img">
@@ -100,7 +133,7 @@
                                     <div className="product-title">
                                         <h3>商品名稱</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, aliquid.</p>
-                                        <h2>NT 9999</h2>
+                                        <h2>NT 9,999</h2>
                                     </div>
 
                                     <div className="choice">
@@ -167,81 +200,33 @@
                                 </div>
                                 <div class="evaluate">
                                     <p>我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容</p>
-                   
+
                                 </div>
 
                             </div>
-
 
                             <div class="moretitle">
                                 <h2>也許你也喜歡</h2>
                             </div>
                             <div class="morelist">
                                 <div class="moreproduct">
-                                    <a href="#">
-                                        <img src="../img/shop/shop-1-like1.svg" alt="" />
-                                        <h3>商品名稱</h3>
-                                        <div class="price">
-                                            <h4>評價</h4>
-                                            <h3>NT 9999</h3>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <img src="../img/shop/shop-1-like1.svg" alt="" />
-                                        <h3>商品名稱</h3>
-                                        <div class="price">
-                                            <h4>評價</h4>
-                                            <h3>NT 9999</h3>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <img src="../img/shop/shop-1-like1.svg" alt="" />
-                                        <h3>商品名稱</h3>
-                                        <div class="price">
-                                            <h4>評價</h4>
-                                            <h3>NT 9999</h3>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <img src="../img/shop/shop-1-like1.svg" alt="" />
-                                        <h3>商品名稱</h3>
-                                        <div class="price">
-                                            <h4>評價</h4>
-                                            <h3>NT 9999</h3>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <img src="../img/shop/shop-1-like1.svg" alt="" />
-                                        <h3>商品名稱</h3>
-                                        <div class="price">
-                                            <h4>評價</h4>
-                                            <h3>NT 9999</h3>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <img src="../img/shop/shop-1-like1.svg" alt="" />
-                                        <h3>商品名稱</h3>
-                                        <div class="price">
-                                            <h4>評價</h4>
-                                            <h3>NT 9999</h3>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <img src="../img/shop/shop-1-like1.svg" alt="" />
-                                        <h3>商品名稱</h3>
-                                        <div class="price">
-                                            <h4>評價</h4>
-                                            <h3>NT 9999</h3>
-                                        </div>
-                                    </a>
+                                    {products.map(product => (
+                                        <Card
+                                            key={product.id}
+                                            title={product.title}
+                                            nature={product.nature}
+                                            img={product.img}
+                                            alt={product.alt}
+                                            price={product.price}
+                                            appraise={product.appraise}
+                                        />
+                                    ))}
+                               
                                 </div>
                             </div>
 
-
-
-
                         </section>
-                        
+                        <Footer/>
                     </>
 
 
@@ -256,27 +241,9 @@
 
 
 
-        </div>
-
-        </div>
 
 
-        <footer>
-            <div class="footerlogo">
-                <div class="logo">121312</div>
-                <small>13212313131</small>
-            </div>
 
-            <div class="footerlist">
-                <ul>
-                    <li><a href="./shoplist.html">最新</a></li>
-                    <li><a href="./shoplist.html">分類</a></li>
-                    <li><a href="./emulator.html">模擬器</a></li>
-                    <li><a href="#">關於</a></li>
-                </ul>
-            </div>
-        </footer>
-    </main>
 </body>
 
 </html>

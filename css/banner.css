@@ -81,8 +81,8 @@
   #banner-1 .content-slider nav .controls label {
     position: relative;
     display: inline-block;
-    width: 10%;
-    height: 3.1em;
+    width: 3%;
+    height: 2vh;
     overflow: hidden;
     margin: 0 1em;
     padding-top: 1em;
@@ -101,7 +101,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 3px;
+    height: 100%;
     width: 100%;
     background:#F5F5F5 ;
     z-index: 100;

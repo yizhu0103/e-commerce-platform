@@ -1,6 +1,6 @@
-@use'variables' as *;
-@use'function' as *;
-
+@use 'variables' as *;
+@use 'function' as *;
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Noto+Sans+SC:wght@100..900&display=swap');
 
 * {
     margin: 0;
@@ -158,16 +158,54 @@ img {
     object-fit: cover;
 }
 
+.price,
+.titlebox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 100%;
+
+    h2 {
+        display: flex;
+        align-items: center;
+        line-height: 100%;
+        font-weight: 900;
+
+    }
+
+    h3 {
+        color: map-get($color , primary);
+        font-weight: 900;
+        line-height: 100%;
+    }
+
+    h5 {
+        font-size: 0.9rem;
+        line-height: 100%;
+        color: map-get($color , font-color);
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        color: map-get($color , font-color);
+        font-weight: 500;
+        line-height: 100%;
+    }
+}
+
 
 
 /* 主要顯示區 */
 body {
     color: map-get($color , font-color);
     background-color: map-get($color, bkgcolor);
+    font-family: $font-family-en;
+
 }
 
 main {
-    background-color: map-get($color , bkgcolor)
+    background-color: map-get($color , bkgcolor);
+    position: relative;
 }
 
 #topbar {
@@ -178,7 +216,7 @@ main {
     padding: 0 50px;
     width: 100%;
     height: 10vh;
-    position: absolute;
+    position: static;
 
 
     .navigation {
@@ -312,7 +350,14 @@ main {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin-bottom: 10px;
 
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    color: map-get($color , font-color);
+                    font-weight: 600;
                 }
 
             }
@@ -322,44 +367,58 @@ main {
 
 #fashion {
 
-    justify-content: flex-end;
+    justify-content: flex-start;
     background-size: cover;
-    background-image: url(../img/fashionbgk.svg);
     border-bottom: map-get($color , assistbroen) 20px solid;
+    position: relative;
 
     .fashbox {
+        position: absolute;
+        z-index: 888;
         border: map-get($color , bkgcolor) solid 2px;
-        margin-right: 12%;
+        box-shadow: 0em 0em 0.2em #000;
+        margin-left: 12%;
         width: 30%;
         padding: 15px;
 
         h3 {
-            color: map-get($color , bkgcolor)
+            color: map-get($color , bkgcolor);
+            font-size: 1.5rem;
         }
 
         h2 {
-            color: map-get($color , bkgcolor)
+            color: map-get($color , bkgcolor);
+            font-size: 2rem;
         }
 
         p {
-            color: map-get($color , bkgcolor)
+            color: map-get($color , bkgcolor);
+            font-size: 1.5rem;
         }
 
         .more {
 
             a {
-                color: map-get($color , bkgcolor)
+                color: map-get($color , bkgcolor);
             }
 
         }
 
     }
 
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        filter: brightness(60%);
+    }
+
 }
 
 #about {
-
     justify-content: space-between;
+
+
 
     .about {
         width: 55%;
@@ -378,6 +437,8 @@ main {
             width: 70%;
         }
     }
+
+
 
 
 }
@@ -410,57 +471,88 @@ footer {
     }
 }
 
+#gotop {
+    position: fixed;
+    @include flex-center;
+    right: 20px;
+    bottom: 12vh;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    padding: 10px 10px 5px 10px;
+    border-radius: 50%;
+    background-color: map-get($color , assistbroen);
+    cursor: pointer;
+
+    /* 滑鼠樣式手指 */
+    img {
+        @include flex-center;
+        width: 80%;
+        height: 80%;
+        object-fit: cover;
+    }
+}
+
 /* 商品頁 shoplist */
 #shoplist {
     justify-content: center;
     align-items: flex-start;
-    padding-top: 15vh;
     height: auto;
+
 
 
     .shoplist-menu {
         @include flex-column;
-        width: 10%;
-        height: 80vh;
+        width: 15%;
+        height: 60vh;
+        margin-top: 50px;
+        padding: 50px 10px;
+
 
 
 
         h2 {
+            font-size: 1.5rem;
+            color: map-get($color , font-color);
+            font-weight: 900;
+            margin: 5px 0;
+        }
+
+        h3 {
             font-size: 1.25rem;
             color: map-get($color , font-color);
-            font-weight: 800;
-            margin: 5px 0;
-
         }
 
-        .choice {
-            @include flex-column;
-
-            .chlist {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            .choice_btn {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: flex-end;
-
-                #choice_btn {
-                    background-color: map-get($color , primary);
-                    color: map-get($color , bkgcolor);
-                    width: 30%;
-                    height: 4vh;
-                    font-size: 0.8rem;
 
 
-                }
+        // .choice {
+        //     @include flex-column;
 
-            }
-        }
+        //     .chlist {
+        //         width: 100%;
+        //         height: 100%;
+        //         display: flex;
+        //         justify-content: flex-end;
+        //     }
+
+        //     .choice_btn {
+        //         width: 100%;
+        //         height: 100%;
+        //         display: flex;
+        //         justify-content: flex-end;
+
+        //         #choice_btn {
+        //             background-color: map-get($color , primary);
+        //             color: map-get($color , bkgcolor);
+        //             width: 30%;
+        //             height: 4vh;
+        //             font-size: 0.8rem;
+
+
+        //         }
+
+        //     }
+        // }
 
     }
 
@@ -472,18 +564,23 @@ footer {
 
         .carouselimg {
             width: 95%;
-            height: 60vh;
+            height: 70vh;
             padding-top: 50px;
+            
 
-
-
-            a {
+            ul {
                 width: 100%;
                 height: 100%;
-                padding-bottom: 10px;
+                
 
-                img {
-                    object-fit: cover;
+                li {
+                    img {
+                        vertical-align: bottom;
+                        width: 80vw;
+                        height: 70vh;
+                        
+
+                    }
                 }
             }
 
@@ -499,12 +596,13 @@ footer {
 
 
 
-            h2 {
-                font-size: 1.5rem;
+            .comtitle {
+                font-size: 2rem;
                 color: map-get($color , font-color);
                 font-weight: 800;
-                margin: 5px 0;
-                width: 90%;
+                margin: 10px 0;
+                width: 95%;
+                border-bottom: map-get($color , font-color) solid;
 
             }
 
@@ -522,7 +620,7 @@ footer {
                     width: 350px;
                     height: 480px;
                     margin: 15px auto;
-                    transition: transform 0.4s;
+                    transition: 0.4s;
 
                     &:hover {
                         img {
@@ -530,32 +628,16 @@ footer {
                         }
                     }
 
-                    h3 {
-                        font-size: 1rem;
-                        color: map-get($color , font-color);
-                        font-weight: 900;
-                    }
+
 
                     img {
                         width: 95%;
                         height: 85%;
                         object-fit: cover;
-                        margin-bottom: 5px;
+                        margin-bottom: 10px;
                     }
 
-                    .price {
-                        display: flex;
-                        justify-content: space-between;
-                        h5{
-                            font-size: 0.9rem;
-                            color: map-get($color , font-color);
-                        }
-                        h4{
-                            font-size: 1.25rem;
-                            color: map-get($color , font-color);
-                            font-weight: 600;
-                        }
-                    }
+
 
                 }
 
@@ -587,7 +669,8 @@ footer {
 #shopbox {
     @include flex-column;
     height: auto;
-    padding-top: 15vh;
+    margin-top: 5vh;
+
 
     .product {
         width: 80%;
@@ -620,7 +703,7 @@ footer {
                         height: 100%;
                         cursor: pointer;
                         object-fit: cover;
-                        transition: transform 0.5s ease;
+                        transition: 0.5s ease;
 
                         &:hover {
                             transform: scale(2);
@@ -660,7 +743,6 @@ footer {
                 }
 
                 p {
-                    font-size: .75rem;
                     margin-bottom: 20px;
                 }
 
@@ -711,7 +793,7 @@ footer {
                         line-height: 100%;
                         font-weight: 800;
                         font-size: 1rem;
-                        transition: transform 0.5s;
+                        transition: 0.5s;
 
                         &:hover {
                             background-color: map-get($color , primary);
@@ -721,7 +803,11 @@ footer {
                     }
 
                     span {
-                        font-size: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2rem;
+                        line-height: 2rem;
 
                     }
 
@@ -739,6 +825,12 @@ footer {
                         height: 100%;
                         font-weight: 800;
                         font-size: 1rem;
+                        transition: 0.4s;
+
+                        &:hover {
+                            background-color: map-get($color , assistbroen);
+                            color: map-get($color , bkgcolor);
+                        }
 
                     }
 
@@ -756,7 +848,6 @@ footer {
         align-items: center;
         width: 80%;
         height: 60vh;
-        // border: #000 solid;
         padding-top: 15px;
 
         .intcho {
@@ -806,41 +897,62 @@ footer {
 
     .moretitle {
         width: 80%;
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
     }
 
 
     .morelist {
         width: 100%;
-        height: 40vh;
+        height: 60vh;
         display: flex;
         align-items: center;
-        flex-direction: column;
-        overflow: auto;
+        justify-content: flex-start;
         margin-bottom: 10vh;
+        overflow-x: scroll;
+        max-width: 1440px;
+
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 99px;
+            background-color: map-get($color , assistbroen);
+        }
+
+        &::-webkit-scrollbar-track {
+            margin: 0 200px;
+            border-radius: 99px;
+            border: map-get($color , assistGray-2) solid 2px;
+            background-color: map-get($color , secondary);
+        }
 
 
         .moreproduct {
-            width: 1440px;
-            height: 100%;
             display: flex;
-            align-content: flex-start;
 
 
             a {
                 width: 300px;
-                height: 280px;
+                height: 350px;
                 margin: 5px;
 
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    margin-bottom: 10px;
                 }
 
-                .price {
-                    width: 95%;
-                    display: flex;
-                    justify-content: space-between;
+                h2 {
+                    font-size: 1.25rem;
                 }
             }
         }
@@ -997,7 +1109,7 @@ footer {
 #checkout {
     flex-direction: column;
     height: auto;
-    padding-top: 15vh;
+    margin-top: 5vh;
 
     .shoppingcar {
         width: 90%;
@@ -1091,6 +1203,12 @@ footer {
                                 line-height: 100%;
                                 font-weight: 800;
                                 font-size: 1rem;
+
+                                &:hover {
+                                    background-color: map-get($color , primary);
+                                    color: map-get($color , bkgcolor);
+                                }
+
 
                             }
 
@@ -1217,3 +1335,6 @@ footer {
 }
 
 /* 模擬器畫面 emulator */
+#emulator{
+    
+}

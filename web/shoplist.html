@@ -11,6 +11,9 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 共用元件 -->
+    <script type="text/babel" src="../js/Element.js"></script>
 </head>
 
 <body>
@@ -18,47 +21,50 @@
     <main>
         <div id="root"></div>
         <script type="text/babel">
-            const { useState } = React;
-
-
-            function Card(props) {
-                // 資料解構:把物件或陣列內容提出來給指定變數(必須是被解構的來源是元件的屬性名稱)
-                // console.log(props);
-                const { title, img, alt, price, appraise } = props;
-
-                return (
-                    <a href="./shop.html">
-                        <img src={img} alt={alt} />
-                        <h3>{title}</h3>
-                        <div className="price">
-                            <h5>{appraise}</h5>
-                            <h4>NT. {price}</h4>
-                        </div>
-                    </a>
-                );
-            }
-
+            const { useState, useEffect } = React;
 
 
             function App() {
+
+                useEffect(() => {
+                $(function(){
+                    $('#carousel').jCarouselLite({
+                        //多久時間做輪播
+                        auto:1500,//多久時間輪播一次
+                        scroll:1,//每次捲動幾張
+                        visible:1,//顯示幾張圖
+                        speed:2000,//輪播速度 轉的速度
+                        
+                    });
+                });
+            
+               
+            }, []);
+
                 const products = [
                     {
                         id: 1,
-                        title: '最新商品',
+                        title: '寧靜時光大衣',
+                        className: 'coat',
+                        nature: '最新商品',
                         img: '../img/index/banner-1.svg',
                         price: '9,999',
                         alt: 'Product Image',
                         appraise: '非常好穿'
                     }, {
                         id: 2,
-                        title: '最新商品',
+                        title: '西裝外套',
+                        className: 'coat',
+                        nature: '最新商品',
                         img: '../img/index/banner-2.svg',
                         price: '9,999',
                         alt: 'Product Image',
                         appraise: '超級好穿'
                     }, {
                         id: 3,
-                        title: '最新商品',
+                        title: '好穿的褲子',
+                        className: 'coat',
+                        nature: '最新商品',
                         img: '../img/index/banner-3.svg',
                         price: '9,999',
                         alt: 'Product Image',
@@ -66,6 +72,8 @@
                     }, {
                         id: 4,
                         title: '羊絨開衫',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-1.svg',
                         price: '9,999',
                         alt: 'Product Image',
@@ -73,6 +81,8 @@
                     }, {
                         id: 5,
                         title: '雪紡襯衫',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-2.svg',
                         price: '8,888',
                         alt: 'Product Image',
@@ -80,13 +90,17 @@
                     }, {
                         id: 6,
                         title: '職業裝',
+                        nature: '',
                         img: '../img/index/shop-3.svg',
+                        className: '',
                         price: '7,777',
                         alt: 'Product Image',
                         appraise: '----'
                     }, {
                         id: 7,
                         title: '雪紡高腰闊腿褲',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-4.svg',
                         price: '6,666',
                         alt: 'Product Image',
@@ -94,6 +108,8 @@
                     }, {
                         id: 8,
                         title: '經典小黑裙',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-5.svg',
                         price: '1,234',
                         alt: 'Product Image',
@@ -102,6 +118,8 @@
                     , {
                         id: 9,
                         title: '雪紡襯衫',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-2.svg',
                         price: '8,888',
                         alt: 'Product Image',
@@ -109,6 +127,8 @@
                     }, {
                         id: 10,
                         title: '職業裝',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-3.svg',
                         price: '7,777',
                         alt: 'Product Image',
@@ -116,6 +136,8 @@
                     }, {
                         id: 11,
                         title: '雪紡高腰闊腿褲',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-4.svg',
                         price: '6,666',
                         alt: 'Product Image',
@@ -123,6 +145,8 @@
                     }, {
                         id: 12,
                         title: '經典小黑裙',
+                        className: '',
+                        nature: '',
                         img: '../img/index/shop-5.svg',
                         price: '1,234',
                         alt: 'Product Image',
@@ -131,91 +155,48 @@
                 ];
 
                 return <>
-                    <header id="topbar">
-
-                        <div className="logo"><a href="../index.html"><h1>Elegancia</h1></a></div>
-                        <nav className="navigation">
-                            <ul className="menulist">
-                                <li><a href="../index.html#new">最新</a></li>
-                                <li><a href="./shoplist.html">分類</a></li>
-                                <li><a href="./emulator.html">模擬器</a></li>
-                                <li><a href="#">關於</a></li>
-                            </ul>
-                            <ul className="iconlist">
-                                <li><a href="#"><img src="../img/index/search.svg" alt="" /></a></li>
-                                <li><a href="./login.html"><img src="../img/index/member.svg" alt="" /></a></li>
-                                <li><a href="./checkout.html"><img src="../img/index/bag.svg" alt="" /></a></li>
-
-                            </ul>
-                        </nav>
-                    </header>
+                    <Header />
                     <section id="shoplist">
                         <div className="shoplist-menu">
-                            <div className="commodity">
+                            <div className="commodity" id="filterBtn">
                                 <h2>最新商品</h2>
                                 <h3><a href="#">熱銷商品</a></h3>
                                 <h2>商品分類</h2>
-                                <h3><a href="#">文字文字</a></h3>
-                                <h3><a href="#">文字文字</a></h3>
-                                <h3><a href="#">文字文字</a></h3>
-                                <h3><a href="#">文字文字</a></h3>
-                                <h3><a href="#">文字文字</a></h3>
-                                <h3><a href="#">文字文字</a></h3>
-                                <h3><a href="#">文字文字</a></h3>
-                                <h3><a href="#">文字文字</a></h3>
+                                <h3 className="allItem"><a href="#">全部商品</a></h3>
+                                <h3 className="coat"><a href="#">外套</a></h3>
+                                <h3 className="knitted"><a href="#">針織衫</a></h3>
+                                <h3 className="shirt"><a href="#">襯衫</a></h3>
+                                <h3 className="leisure"><a href="#">休閒套裝</a></h3>
+                                <h3 className="dress"><a href="#">洋裝</a></h3>
+                                <h3 className="skirt"><a href="#">裙子</a></h3>
+                                <h3 className="trousers"><a href="#">褲裝</a></h3>
+                                <h3 className="inner"><a href="#">內搭</a></h3>
+                                <h3 className="fitting"><a href="#">配件</a></h3>
+                                <h3 className="shoes"><a href="#">鞋子</a></h3>
 
-                                <div className="choice">
-                                    <h2>尺寸</h2>
-                                    <div className="chlist">
-                                        <select name="other" id="other" title="尺寸選項">
-                                            <option value="">尺寸</option>
-                                            <option value="S">S</option>
-                                            <option value="M">M</option>
-                                            <option value="L">L</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div className="choice">
-                                <h2>顏色</h2>
-                                <div className="chlist">
-                                    <select name="other" id="other" title="顏色選項">
-                                        <option value="">顏色</option>
-                                        <option value="紅">紅</option>
-                                        <option value="黑">黑</option>
-                                        <option value="白">白</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="choice">
-                                <h2>價錢</h2>
-                                <div className="price-range-container">
-                                    <input type="range" id="priceRangeMin" className="range-slider" min="100" max="5000" value="500" />
-                                    <div className="price">
-                                        <span id="minPrice">$XXX</span>
-                                        <span >~</span>
-                                        <span id="maxPrice">$XXXX</span>
-                                    </div>
-                                </div>
-                                <div className="choice_btn"><button id="choice_btn">送出</button></div>
                             </div>
                         </div>
 
 
 
                         <div className="shoplist-main">
-                            <div className="carouselimg">
-                                <a href="#"><img src="../img/index/banner-1.svg" alt="" /></a>
+                            <div className="carouselimg" id="carousel">
+                                <ul>
+                                    <li><img src="../img/index/banner-1.svg" alt="" /></li>
+                                    <li><img src="../img/index/banner-2.svg" alt="" /></li>
+                                    <li><img src="../img/index/banner-3.svg" alt="" /></li>
+
+                                </ul>
                             </div>
                             <div className="commodity">
-                                <h2>商品種類</h2>
-                                <div className="commoditylist">
+                                <h2 className='comtitle'>全部商品</h2>
+                                <div className="commoditylist" id="filterList">
                                     {products.map(product => (
                                         <Card
                                             key={product.id}
                                             title={product.title}
+                                            className={product.className}
+                                            nature={product.nature}
                                             img={product.img}
                                             alt={product.alt}
                                             price={product.price}
@@ -236,23 +217,8 @@
                         </div>
                     </section >
 
-                    <footer>
-                        <div class="footerlogo">
-                            <div class="logo">121312</div>
-                            <small>13212313131</small>
-                        </div>
+                    <Footer />
 
-                        <div class="footerlist">
-
-                            <ul>
-                                <li><a href="./shoplist.html">最新</a></li>
-                                <li><a href="./shoplist.html">分類</a></li>
-                                <li><a href="./emulator.html">模擬器</a></li>
-                                <li><a href="#">關於</a></li>
-                            </ul>
-
-                        </div>
-                    </footer>
 
                 </>
             }
@@ -260,7 +226,10 @@
 
         </script>
 
-
+  <!-- jQuery主程式 只要放一次就好後面可以自己呼叫 -->
+  <script src="../jQuery/js/jquery-1.11.3.min.js"></script>
+  <!-- 輪播主程式 -->
+  <script src="../jQuery/js/jquery.jcarousellite.min.js"></script>
 
 
     </main>
