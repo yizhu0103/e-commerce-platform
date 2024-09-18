@@ -30,6 +30,17 @@
 
 
             function App() {
+
+
+                function ProductInfo() {
+                    // State to track which section is currently active
+                    const [activeSection, setActiveSection] = useState('introduce');
+
+                    // Function to handle button click
+                    const handleButtonClick = (section) => {
+                        setActiveSection(section);
+                    };
+                }
                 const [num, setNum] = useState(0);
 
                 const [currentPic, setCurrentPic] = useState('../img/shop/shop-1.jpg');
@@ -163,26 +174,40 @@
 
                             <div className="introduction">
                                 <div className="intcho">
-                                    <button id="introduce">商品介紹</button>
-                                    <button id="evaluate">商品評價</button>
+                                    <button
+                                        id="introduce"
+                                        onClick={() => handleButtonClick('introduce')}
+                                        className={activeSection === 'introduce' ? 'active' : ''}
+                                    >
+                                        商品介紹
+                                    </button>
+                                    <button
+                                        id="evaluate"
+                                        onClick={() => handleButtonClick('evaluate')}
+                                        className={activeSection === 'evaluate' ? 'active' : ''}
+                                    >
+                                        商品評價
+                                    </button>
                                 </div>
-                                <div className="inttestlist">
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad magnam eveniet consequuntur dolorum
-                                        accusantium tempora aut dicta harum tenetur culpa? Distinctio deleniti iusto adipisci, eaque
-                                        deserunt velit. Maxime, ab aspernatur.</p>
-
-                                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, nulla!</h2>
-
-                                    <div className="intlist">
-                                        <h4>我是材質</h4>
-                                        <h4>我是材質</h4>
-                                        <h4>我是材質</h4>
+                                {activeSection === 'introduce' && (
+                                    <div className="inttestlist">
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad magnam eveniet consequuntur dolorum
+                                            accusantium tempora aut dicta harum tenetur culpa? Distinctio deleniti iusto adipisci, eaque
+                                            deserunt velit. Maxime, ab aspernatur.</p>
+                                        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, nulla!</h2>
+                                        <div className="intlist">
+                                            <h4>我是材質</h4>
+                                            <h4>我是材質</h4>
+                                            <h4>我是材質</h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="evaluate" >
-                                    <p>我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容</p>
+                                )}
 
-                                </div>
+                                {activeSection === 'evaluate' && (
+                                    <div className="evaluate">
+                                        <p>我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容我是商品評價內容</p>
+                                    </div>
+                                )}
 
                             </div>
 

@@ -514,22 +514,19 @@ footer {
         @include flex-column;
         width: 15%;
         height: 55vh;
-
         padding: 50px 10px;
         position: relative;
-
         #filterBtn {
             position: fixed;
-
             h3 {
                 background-color: map-get($color , bkgcolor);
-                border: 1px solid map-get($color , gray-bottom-line);
                 border-radius: 30px;
                 margin: 10px;
                 padding: 5px 30px;
+                cursor: pointer;
 
                 &.active {
-                    background-color: map-get($color , assistGray);
+                    
                     color: map-get($color , primary);
                     font-weight: 800;
                 }
@@ -798,8 +795,8 @@ footer {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        font-size: 2rem;
-                        line-height: 2rem;
+                        font-size: 1.5rem;
+                        line-height: 1.5rem;
 
                     }
 

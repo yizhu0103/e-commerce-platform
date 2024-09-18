@@ -451,13 +451,12 @@ footer .footerlist ul li a {
 }
 #shoplist .shoplist-menu #filterBtn h3 {
   background-color: #F5F5F5;
-  border: 1px solid rgba(34, 23, 18, 0.4);
   border-radius: 30px;
   margin: 10px;
   padding: 5px 30px;
+  cursor: pointer;
 }
 #shoplist .shoplist-menu #filterBtn h3.active {
-  background-color: #C0BFB2;
   color: #771011;
   font-weight: 800;
 }
@@ -667,8 +666,8 @@ footer .footerlist ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 }
 #shopbox .product .product-ifon .product_buy .buy-btn {
   width: 30%;

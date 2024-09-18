@@ -23,79 +23,51 @@
         <div id="root"></div>
         <script type="text/babel">
             const { useState, useEffect } = React;
+ 
 
 
             function App() {
-
+                const [selectedCategory, setSelectedCategory] = useState('全部商品');
                 useEffect(() => {
                     $(function () {
                         $('#carousel').jCarouselLite({
-                            //多久時間做輪播
-                            auto: 1500,//多久時間輪播一次
-                            scroll: 1,//每次捲動幾張
-                            visible: 1,//顯示幾張圖
-                            speed: 2000,//輪播速度 轉的速度
-
+                            auto: 1500,
+                            scroll: 1,
+                            visible: 1,
+                            speed: 2000,
                         });
-                    });
 
+                        $(function () {
+                            let setFilter = $('#filterBtn');
+                            let filterBtn = setFilter.find('h3');
+                            let btnAll = $('.allItem');
+                            let setList = $('#filterList');
+                            let filterList = setList.find('li');
 
-                }, []);
-
-                useEffect(() => {
-                    // 撰寫jQuery
-                    $(function () {
-                        // 變數宣告
-                        // 按鈕區
-                        let setFilter = $('#filterBtn');
-                        // 按鈕中的超連結元素
-                        let filterBtn = setFilter.find('h3');
-                        // 取的ALL按鈕
-                        let btnAll = $('.allItem');
-                        // 取得所有列表中的元素區
-                        let setList = $('#filterList');
-                        // 取得列表中的li
-                        let filterList = setList.find('li');
-
-                        filterBtn.click(function () {
-                            // console.log($(this).attr('class'));
-                            // 檢查是否沒有被點選狀態，不是才執行
-                            if (!$(this).hasClass('active')) {
-                                let filterClass = $(this).attr('class');
-                                // 使用each()方法，篩選列表中一樣的類別名稱
+                            filterBtn.click(function () {
+                                if (!$(this).hasClass('active')) {
+                                    let filterClass = $(this).attr('class');
+                                    filterList.each(function () {
+                                        if ($(this).hasClass(filterClass)) {
+                                            $(this).css({ display: 'block' });
+                                        }
+                                        else {
+                                            $(this).css({ display: 'none' });
+                                        }
+                                    });
+                                    filterBtn.removeClass('active');
+                                    $(this).addClass('active');
+                                }
+                            });
+                            btnAll.click(function () {
                                 filterList.each(function () {
-                                    // 檢查li的類別名稱是否為被篩選的名稱
-                                    if ($(this).hasClass(filterClass)) {
-                                        // 沒找到
-                                        $(this).css({ display: 'block' });
-                                    }
-                                    else {
-                                        // 沒找到
-                                        $(this).css({ display: 'none' });
-                                    }
-                                });
-                                // 清除按鈕上的active
-                                filterBtn.removeClass('active');
-                                // 目前點選的超連結按鈕加上active類別
-                                $(this).addClass('active');
-
-                            }
+                                    $(this).css({ display: 'block' });
+                                })
+                            });
+                            btnAll.click();
                         });
-                        // 顯示全部
-                        btnAll.click(function () {
-                            filterList.each(function () {
-                                $(this).css({ display: 'block' });
-                            })
-                        });
-                        // 載入時，讓ALL按鈕為點選的狀態
-                        btnAll.click();
-
-
                     });
                 }, []);
-
-
-
 
 
                 const products = [
@@ -210,72 +182,62 @@
                         appraise: '----'
                     }
                 ];
+                const handleCategoryClick = (category) => {
+                    setSelectedCategory(category);
+                };
 
-                return <>
-                    <Header />
-                    <section id="shoplist">
-                        <div className="shoplist-menu">
-                            <div className="commodity" id="filterBtn">
-                                <h2>最新商品</h2>
-                                <h3  className="new">最新商品</h3>
-                                <h2>商品分類</h2>
-                                <h3  className="allItem">全部商品</h3>
-                                <h3  className="coat">外套</h3>
-                                <h3  className="knitted">針織衫</h3>
-                                <h3  className="shirt">襯衫</h3>
-                                <h3  className="leisure">套裝</h3>
-                                <h3  className="dress">洋裝</h3>
-                                <h3  className="skirt">裙子</h3>
-                                <h3  className="trousers">褲裝</h3>
-                                <h3  className="inner">內搭</h3>
-                                <h3  className="fitting">配件</h3>
-                                <h3  className="shoes">鞋子</h3>
-
-                            </div>
+                return    <>
+                <Header />
+                <section id="shoplist">
+                    <div className="shoplist-menu">
+                        <div className="commodity" id="filterBtn">
+                            <h2>最新商品</h2>
+                            <h3 className="new" onClick={() => handleCategoryClick('最新商品')}>最新商品</h3>
+                            <h2>商品分類</h2>
+                            <h3 className="allItem" onClick={() => handleCategoryClick('全部商品')}>全部商品</h3>
+                            <h3 className="coat" onClick={() => handleCategoryClick('外套')}>外套</h3>
+                            <h3 className="knitted" onClick={() => handleCategoryClick('針織衫')}>針織衫</h3>
+                            <h3 className="shirt" onClick={() => handleCategoryClick('襯衫')}>襯衫</h3>
+                            <h3 className="leisure" onClick={() => handleCategoryClick('套裝')}>套裝</h3>
+                            <h3 className="dress" onClick={() => handleCategoryClick('洋裝')}>洋裝</h3>
+                            <h3 className="skirt" onClick={() => handleCategoryClick('裙子')}>裙子</h3>
+                            <h3 className="trousers" onClick={() => handleCategoryClick('褲裝')}>褲裝</h3>
+                            <h3 className="inner" onClick={() => handleCategoryClick('內搭')}>內搭</h3>
+                            <h3 className="fitting" onClick={() => handleCategoryClick('配件')}>配件</h3>
+                            <h3 className="shoes" onClick={() => handleCategoryClick('鞋子')}>鞋子</h3>
                         </div>
+                    </div>
 
-
-
-                        <div className="shoplist-main">
-                            <div className="carouselimg" id="carousel">
-                                <ul>
-                                    <li><img src="../img/index/banner-1.jpg" alt="" /></li>
-                                    <li><img src="../img/index/banner-2.jpg" alt="" /></li>
-                                    <li><img src="../img/index/banner-3.jpg" alt="" /></li>
-
-                                </ul>
-                            </div>
-                            <div className="commodity">
-                                <h2 className='comtitle'>全部商品</h2>
-                                <ul className="commoditylist" id="filterList">
-                                    {products.map(product => (
-                                        <Card
-                                            key={product.id}
-                                            title={product.title}
-                                            className={product.className}
-                                            nature={product.nature}
-                                            img={product.img}
-                                            alt={product.alt}
-                                            price={product.price}
-                                            appraise={product.appraise}
-                                        />
-                                    ))}
-
-                                </ul>
-                             {/*    <div className="morecommdity">
-                                    <button id="morecommdity">顯示更多</button>
-                                </div> */}
-
-                            </div>
-
-
+                    <div className="shoplist-main">
+                        <div className="carouselimg" id="carousel">
+                            <ul>
+                                <li><img src="../img/index/banner-1.jpg" alt="" /></li>
+                                <li><img src="../img/index/banner-2.jpg" alt="" /></li>
+                                <li><img src="../img/index/banner-3.jpg" alt="" /></li>
+                            </ul>
                         </div>
-                    </section >
-
-                    <Footer />
-
-
-                </>
+                        <div className="commodity">
+                            {/* Update the h2 text with the selected category */}
+                            <h2 className='comtitle'>{selectedCategory}</h2>
+                            <ul className="commoditylist" id="filterList">
+                                {products.map(product => (
+                                    <Card
+                                        key={product.id}
+                                        title={product.title}
+                                        className={product.className}
+                                        nature={product.nature}
+                                        img={product.img}
+                                        alt={product.alt}
+                                        price={product.price}
+                                        appraise={product.appraise}
+                                    />
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <Footer />
+            </>
             }
             const root = ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 

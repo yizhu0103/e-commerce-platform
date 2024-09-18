@@ -24,18 +24,7 @@
         <div id="root"></div>
         <script type="text/babel">
             const { useState } = React;
-            function Amount() {
-                <div className="amount">
-
-                    <button id="reduce" onClick={() => {
-                        setNum(num - 1);
-                    }}>-</button>
-                    <span>{num}</span>
-                    <button id="increase" onClick={() => {
-                        setNum(num + 1);
-                    }}>+</button>
-                </div>
-            }
+    
 
             function App() {
                 const [num, setNum] = useState(0);
