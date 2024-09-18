@@ -47,6 +47,13 @@ a {
   /* 設定顏色 */
 }
 
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* 取消按鈕樣式 */
 button {
   background: none;
@@ -113,7 +120,7 @@ section {
 .item p {
   font-size: 1.25rem;
   color: #221712;
-  font-weight: 800;
+  font-weight: 600;
 }
 .item .more {
   display: flex;
@@ -429,24 +436,34 @@ footer .footerlist ul li a {
   justify-content: center;
   align-items: flex-start;
   height: auto;
+  min-height: 150vh;
 }
 #shoplist .shoplist-menu {
   display: flex;
   flex-direction: column;
   width: 15%;
-  height: 60vh;
-  margin-top: 50px;
+  height: 55vh;
   padding: 50px 10px;
+  position: relative;
 }
-#shoplist .shoplist-menu h2 {
+#shoplist .shoplist-menu #filterBtn {
+  position: fixed;
+}
+#shoplist .shoplist-menu #filterBtn h3 {
+  background-color: #F5F5F5;
+  border: 1px solid rgba(34, 23, 18, 0.4);
+  border-radius: 30px;
+  margin: 10px;
+  padding: 5px 30px;
+}
+#shoplist .shoplist-menu #filterBtn h3.active {
+  background-color: #C0BFB2;
+  color: #771011;
+  font-weight: 800;
+}
+#shoplist .shoplist-menu #filterBtn h2 {
   font-size: 1.5rem;
-  color: #221712;
   font-weight: 900;
-  margin: 5px 0;
-}
-#shoplist .shoplist-menu h3 {
-  font-size: 1.25rem;
-  color: #221712;
 }
 #shoplist .shoplist-main {
   display: flex;
@@ -493,7 +510,10 @@ footer .footerlist ul li a {
   width: 95%;
   height: 100%;
 }
-#shoplist .shoplist-main .commodity .commoditylist a {
+#shoplist .shoplist-main .commodity .commoditylist li {
+  margin: 0 10px;
+}
+#shoplist .shoplist-main .commodity .commoditylist li a {
   display: flex;
   flex-direction: column;
   width: 350px;
@@ -501,23 +521,24 @@ footer .footerlist ul li a {
   margin: 15px auto;
   transition: 0.4s;
 }
-#shoplist .shoplist-main .commodity .commoditylist a:hover img {
+#shoplist .shoplist-main .commodity .commoditylist li a:hover img {
   filter: brightness(75%);
 }
-#shoplist .shoplist-main .commodity .commoditylist a img {
-  width: 95%;
+#shoplist .shoplist-main .commodity .commoditylist li a img {
+  width: 100%;
   height: 85%;
   object-fit: cover;
   margin-bottom: 10px;
 }
-#shoplist .morecommdity {
+
+.morecommdity {
   width: 100%;
   height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#shoplist .morecommdity #morecommdity {
+.morecommdity #morecommdity {
   background-color: #771011;
   color: #F5F5F5;
   width: 10%;
@@ -928,6 +949,16 @@ footer .footerlist ul li a {
 #checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .ill_title h2 {
   font-weight: 900;
 }
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .ill_title .del_com {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .ill_title .del_com img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 #checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .choice {
   width: 80%;
   display: flex;
@@ -1021,23 +1052,33 @@ footer .footerlist ul li a {
 }
 #checkout .chechoutlist .cal_checkout .cal_tranlist .schedule {
   width: 100%;
-  height: 25%;
+  height: 20%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   border-bottom: rgba(34, 23, 18, 0.4) solid;
 }
 #checkout .chechoutlist .cal_checkout .cal_tranlist .schedule .schedule_list {
-  border: #000 solid;
+  display: flex;
+  justify-content: center;
+  width: 6rem;
+  padding: 20px 5px;
+  background-color: #C0BFB2;
+  border-radius: 50%;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .schedule .schedule_list h3 {
+  color: #221712;
+  font-weight: 900;
+  font-size: 1.25rem;
 }
 #checkout .chechoutlist .cal_checkout .cal_tranlist .transport_choice {
   width: 100%;
-  height: 75%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 5vh;
+  padding-top: 5vh;
 }
 #checkout .chechoutlist .cal_checkout .cal_tranlist .transport_choice h2 {
   width: 70%;
@@ -1048,13 +1089,58 @@ footer .footerlist ul li a {
   line-height: 50px;
   padding-left: 20px;
   margin-bottom: 10px;
+  transition: 0.4s;
 }
-#checkout .chechoutlist .cal_checkout .cal_tranlist .transport_choice .tranlist_btn {
-  width: 60%;
-  height: 10%;
-  margin-top: 5vh;
-  background-color: #771011;
+#checkout .chechoutlist .cal_checkout .cal_tranlist .transport_choice h2:hover {
+  background-color: #6F635B;
   color: #F5F5F5;
 }
+#checkout .chechoutlist .cal_checkout .cal_tranlist .tranlist_btn {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .tranlist_btn button {
+  width: 60%;
+  height: 30%;
+  background-color: #771011;
+  color: #F5F5F5;
+  transition: 0.4s;
+}
+#checkout .chechoutlist .cal_checkout .cal_tranlist .tranlist_btn button:hover {
+  background-color: #6F635B;
+}
 
-/* 模擬器畫面 emulator *//*# sourceMappingURL=style.css.map */
+/* 模擬器畫面 emulator */
+#emulator .emulator_content {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: #000 solid;
+}
+#emulator .emulator_content .emulator_logo,
+#emulator .emulator_content .emulator_btn {
+  width: 95%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+#emulator .emulator_content .emulator_btn {
+  justify-content: flex-end;
+}
+#emulator .emulator_content .emulator_btn button {
+  width: 15%;
+  height: 6vh;
+  background-color: #771011;
+  color: #F5F5F5;
+  transition: 0.4s;
+}
+#emulator .emulator_content .emulator_btn button:hover {
+  background-color: #6F635B;
+}/*# sourceMappingURL=style.css.map */

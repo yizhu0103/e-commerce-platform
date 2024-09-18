@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="../img/E.ico">
+    <title>穿搭電商平台</title>
     <link rel="stylesheet" href="../react-ex1/stylesheets/all.css">
     <link rel="stylesheet" href="../css/style.css">
 
@@ -42,7 +43,7 @@
                             newPic = '../img/shop/shop-1.jpg';
                             break;
                         case 2:
-                            newPic ='../img/shop/shop-2.jpg';
+                            newPic = '../img/shop/shop-2.jpg';
                             break;
                         case 3:
                             newPic = '../img/shop/shop-3.jpg';
@@ -61,7 +62,7 @@
                 const products = [
                     {
                         id: 1,
-                        title: '西裝外套',
+                        title: '寧靜時光大衣',
                         nature: '最新商品',
                         img: '../img/index/banner-2.jpg',
                         price: '9,999',
@@ -118,7 +119,7 @@
 
                 return (
                     <>
-                    <Header/>
+                        <Header />
                         <section id="shopbox">
                             <div class="product">
                                 <div class="product-img">
@@ -140,31 +141,7 @@
                                         <h2>NT 9,999</h2>
                                     </div>
 
-                                    <div className="choice">
-                                        <h2>顏色</h2>
-                                        <div className="chlist">
-                                            <select name="other" title="顏色選項">
-                                                <option defaultValue="">顏色</option>
-                                                <option defaultValue="黑">黑</option>
-                                                <option defaultValue="白">白</option>
-                                                <option defaultValue="灰">灰</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="choice">
-                                        <h2>尺寸</h2>
-                                        <div className="chlist">
-                                            <select name="other" title="尺寸選項">
-                                                <option defaultValue="">尺寸</option>
-                                                <option defaultValue="S">S</option>
-                                                <option defaultValue="M">M</option>
-                                                <option defaultValue="L">L</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
+                                    <Options />
 
                                     <div className="product_buy">
                                         <div className="amount">
@@ -225,12 +202,12 @@
                                             appraise={product.appraise}
                                         />
                                     ))}
-                               
+
                                 </div>
                             </div>
 
                         </section>
-                        <Footer/>
+                        <Footer />
                     </>
 
 

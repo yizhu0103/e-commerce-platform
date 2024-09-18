@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="../img/E.ico">
+    <title>穿搭電商平台</title>
     <link rel="stylesheet" href="../react-ex1/stylesheets/all.css">
     <link rel="stylesheet" href="../css/style.css">
 
@@ -27,25 +28,81 @@
             function App() {
 
                 useEffect(() => {
-                $(function(){
-                    $('#carousel').jCarouselLite({
-                        //多久時間做輪播
-                        auto:1500,//多久時間輪播一次
-                        scroll:1,//每次捲動幾張
-                        visible:1,//顯示幾張圖
-                        speed:2000,//輪播速度 轉的速度
-                        
+                    $(function () {
+                        $('#carousel').jCarouselLite({
+                            //多久時間做輪播
+                            auto: 1500,//多久時間輪播一次
+                            scroll: 1,//每次捲動幾張
+                            visible: 1,//顯示幾張圖
+                            speed: 2000,//輪播速度 轉的速度
+
+                        });
                     });
-                });
-            
-               
-            }, []);
+
+
+                }, []);
+
+                useEffect(() => {
+                    // 撰寫jQuery
+                    $(function () {
+                        // 變數宣告
+                        // 按鈕區
+                        let setFilter = $('#filterBtn');
+                        // 按鈕中的超連結元素
+                        let filterBtn = setFilter.find('h3');
+                        // 取的ALL按鈕
+                        let btnAll = $('.allItem');
+                        // 取得所有列表中的元素區
+                        let setList = $('#filterList');
+                        // 取得列表中的li
+                        let filterList = setList.find('li');
+
+                        filterBtn.click(function () {
+                            // console.log($(this).attr('class'));
+                            // 檢查是否沒有被點選狀態，不是才執行
+                            if (!$(this).hasClass('active')) {
+                                let filterClass = $(this).attr('class');
+                                // 使用each()方法，篩選列表中一樣的類別名稱
+                                filterList.each(function () {
+                                    // 檢查li的類別名稱是否為被篩選的名稱
+                                    if ($(this).hasClass(filterClass)) {
+                                        // 沒找到
+                                        $(this).css({ display: 'block' });
+                                    }
+                                    else {
+                                        // 沒找到
+                                        $(this).css({ display: 'none' });
+                                    }
+                                });
+                                // 清除按鈕上的active
+                                filterBtn.removeClass('active');
+                                // 目前點選的超連結按鈕加上active類別
+                                $(this).addClass('active');
+
+                            }
+                        });
+                        // 顯示全部
+                        btnAll.click(function () {
+                            filterList.each(function () {
+                                $(this).css({ display: 'block' });
+                            })
+                        });
+                        // 載入時，讓ALL按鈕為點選的狀態
+                        btnAll.click();
+
+
+                    });
+                }, []);
+
+
+
+
 
                 const products = [
                     {
                         id: 1,
                         title: '寧靜時光大衣',
-                        className: 'coat',
+                        className: 'coat new',
                         nature: '最新商品',
                         img: '../img/index/banner-1.jpg',
                         price: '9,999',
@@ -54,7 +111,7 @@
                     }, {
                         id: 2,
                         title: '西裝外套',
-                        className: 'coat',
+                        className: 'coat new',
                         nature: '最新商品',
                         img: '../img/index/banner-2.jpg',
                         price: '9,999',
@@ -63,7 +120,7 @@
                     }, {
                         id: 3,
                         title: '好穿的褲子',
-                        className: 'coat',
+                        className: 'trousers new',
                         nature: '最新商品',
                         img: '../img/index/banner-3.jpg',
                         price: '9,999',
@@ -81,7 +138,7 @@
                     }, {
                         id: 5,
                         title: '雪紡襯衫',
-                        className: '',
+                        className: 'shirt',
                         nature: '',
                         img: '../img/index/shoplist-2.jpg',
                         price: '8,888',
@@ -90,16 +147,16 @@
                     }, {
                         id: 6,
                         title: '職業裝',
+                        className: 'leisure',
                         nature: '',
                         img: '../img/index/shoplist-3.jpg',
-                        className: '',
                         price: '7,777',
                         alt: 'Product Image',
                         appraise: '----'
                     }, {
                         id: 7,
                         title: '雪紡高腰闊腿褲',
-                        className: '',
+                        className: 'trousers',
                         nature: '',
                         img: '../img/index/shoplist-4.jpg',
                         price: '6,666',
@@ -108,7 +165,7 @@
                     }, {
                         id: 8,
                         title: '經典小黑裙',
-                        className: '',
+                        className: 'dress',
                         nature: '',
                         img: '../img/index/shoplist-5.jpg',
                         price: '1,234',
@@ -118,7 +175,7 @@
                     , {
                         id: 9,
                         title: '雪紡襯衫',
-                        className: '',
+                        className: 'shirt',
                         nature: '',
                         img: '../img/index/shoplist-2.jpg',
                         price: '8,888',
@@ -127,7 +184,7 @@
                     }, {
                         id: 10,
                         title: '職業裝',
-                        className: '',
+                        className: 'leisure',
                         nature: '',
                         img: '../img/index/shoplist-3.jpg',
                         price: '7,777',
@@ -136,7 +193,7 @@
                     }, {
                         id: 11,
                         title: '雪紡高腰闊腿褲',
-                        className: '',
+                        className: 'trousers',
                         nature: '',
                         img: '../img/index/shoplist-4.jpg',
                         price: '6,666',
@@ -145,7 +202,7 @@
                     }, {
                         id: 12,
                         title: '經典小黑裙',
-                        className: '',
+                        className: 'dress',
                         nature: '',
                         img: '../img/index/shoplist-5.jpg',
                         price: '1,234',
@@ -160,19 +217,19 @@
                         <div className="shoplist-menu">
                             <div className="commodity" id="filterBtn">
                                 <h2>最新商品</h2>
-                                <h3><a href="#">熱銷商品</a></h3>
+                                <h3  className="new">最新商品</h3>
                                 <h2>商品分類</h2>
-                                <h3 className="allItem"><a href="#">全部商品</a></h3>
-                                <h3 className="coat"><a href="#">外套</a></h3>
-                                <h3 className="knitted"><a href="#">針織衫</a></h3>
-                                <h3 className="shirt"><a href="#">襯衫</a></h3>
-                                <h3 className="leisure"><a href="#">休閒套裝</a></h3>
-                                <h3 className="dress"><a href="#">洋裝</a></h3>
-                                <h3 className="skirt"><a href="#">裙子</a></h3>
-                                <h3 className="trousers"><a href="#">褲裝</a></h3>
-                                <h3 className="inner"><a href="#">內搭</a></h3>
-                                <h3 className="fitting"><a href="#">配件</a></h3>
-                                <h3 className="shoes"><a href="#">鞋子</a></h3>
+                                <h3  className="allItem">全部商品</h3>
+                                <h3  className="coat">外套</h3>
+                                <h3  className="knitted">針織衫</h3>
+                                <h3  className="shirt">襯衫</h3>
+                                <h3  className="leisure">套裝</h3>
+                                <h3  className="dress">洋裝</h3>
+                                <h3  className="skirt">裙子</h3>
+                                <h3  className="trousers">褲裝</h3>
+                                <h3  className="inner">內搭</h3>
+                                <h3  className="fitting">配件</h3>
+                                <h3  className="shoes">鞋子</h3>
 
                             </div>
                         </div>
@@ -190,7 +247,7 @@
                             </div>
                             <div className="commodity">
                                 <h2 className='comtitle'>全部商品</h2>
-                                <div className="commoditylist" id="filterList">
+                                <ul className="commoditylist" id="filterList">
                                     {products.map(product => (
                                         <Card
                                             key={product.id}
@@ -204,12 +261,10 @@
                                         />
                                     ))}
 
-
-
-                                </div>
-                                <div className="morecommdity">
+                                </ul>
+                             {/*    <div className="morecommdity">
                                     <button id="morecommdity">顯示更多</button>
-                                </div>
+                                </div> */}
 
                             </div>
 
@@ -226,10 +281,10 @@
 
         </script>
 
-  <!-- jQuery主程式 只要放一次就好後面可以自己呼叫 -->
-  <script src="../jQuery/js/jquery-1.11.3.min.js"></script>
-  <!-- 輪播主程式 -->
-  <script src="../jQuery/js/jquery.jcarousellite.min.js"></script>
+        <!-- jQuery主程式 只要放一次就好後面可以自己呼叫 -->
+        <script src="../jQuery/js/jquery-1.11.3.min.js"></script>
+        <!-- 輪播主程式 -->
+        <script src="../jQuery/js/jquery.jcarousellite.min.js"></script>
 
 
     </main>

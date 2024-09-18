@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="../img/E.ico">
+    <title>穿搭電商平台</title>
     <link rel="stylesheet" href="../css/style.css">
     <!-- 載入react -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -16,7 +17,7 @@
 </head>
 
 <body>
-
+   
     <main>
         </head>
 
@@ -46,34 +47,13 @@
                         <div className="chechoutlist">
                             <div className="com_checkout">
                                 <div className="com_checkout_item">
-                                    <img src="../img/shop/shop-1-1.svg" alt="" />
+                                    <img src="../img/shop/shop-1.jpg" alt="" />
                                     <div className="com_illustrate">
                                         <div className="ill_title">
-                                            <h2>羊絨開衫</h2>
-                                            <div className="del_com">icon</div>
+                                            <h2>寧靜時光大衣</h2>
+                                            <div className="del_com"><img src="../img/checkout/trash.svg" alt=""/></div>
                                         </div>
-                                        <div className="choice">
-                                            <h2>顏色</h2>
-                                            <div className="chlist">
-                                                <select name="other" title="顏色選項">
-                                                    <option defaultValue="">顏色</option>
-                                                    <option defaultValue="黑">黑</option>
-                                                    <option defaultValue="白">白</option>
-                                                    <option defaultValue="灰">灰</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div className="choice">
-                                            <h2>尺寸</h2>
-                                            <div className="chlist">
-                                                <select name="other" title="尺寸選項">
-                                                    <option value="">尺寸</option>
-                                                    <option value="S">S</option>
-                                                    <option value="M">M</option>
-                                                    <option value="L">L</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        <Options/>
                                         <div className="product_buy">
                                             <div className="amount">
 
@@ -112,18 +92,19 @@
                                 </div>
                                 <div className="cal_tranlist">
                                     <div className="schedule">
-                                        <div className="schedule_list" id="schedule1">運送方式</div>
-                                        <div className="schedule_list" id="schedule2">支付方式</div>
-                                        <div className="schedule_list" id="schedule3">完成</div>
+                                        <div className="schedule_list" id="schedule1"><h3>運送方式</h3></div>
+                                        <div className="schedule_list" id="schedule2"><h3>支付方式</h3></div>
+                                        <div className="schedule_list" id="schedule3"><h3>完成</h3></div>
                                     </div>
                                     <div className="transport_choice">
                                         <h2>全家</h2>
                                         <h2>7-11</h2>
                                         <h2>萊爾富</h2>
                                         <h2>宅配</h2>
-                                        <button className="tranlist_btn">去結帳</button>
+                                     
                                     </div>
-
+                                    <div className="tranlist_btn"><button >下一步</button></div>
+                                    
                                 </div>
                             </div>
                         </div>
