@@ -36,23 +36,6 @@ $(function () {
       /* 任何卷軸的都要去抓html body */
   });
 
-  /* gotop往上 */
-  $('#gotop').click(function () {
-      $('html,body').animate({ scrollTop: 0 }, 1000);
-  });
-
-  $(window).scroll(function () {
-      if ($(this).scrollTop() > 200){
-          $('#gotop').stop().fadeTo('fast',1);
-          // $('#topbar').stop().fadeTo('fast',1);
-          /* 沒加stop會秀斗 */
-      }
-      else {
-          $('#gotop').stop().fadeOut('fast');
-          // $('#topbar').stop().fadeOut('fast');
-      }
-  });
-
   const topbar = document.getElementById('topbar');
   const newsection = document.getElementById('new');
   const menuOffsetTop = topbar.offsetTop; // 取得清單初始位置

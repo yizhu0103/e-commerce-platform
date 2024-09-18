@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- 共用元件 -->
-    <script type="text/babel" src="../js/Element.js"></script>
+    <script type="text/babel" src="../js/Element.jsx"></script>
 </head>
 
 <body>
@@ -42,15 +42,15 @@
                     <Header />
 
                     <section id="checkout">
-                        <h2 class="shoppingcar">購物車</h2>
-                        <div class="chechoutlist">
-                            <div class="com_checkout">
-                                <div class="com_checkout_item">
+                        <h2 className="shoppingcar">購物車</h2>
+                        <div className="chechoutlist">
+                            <div className="com_checkout">
+                                <div className="com_checkout_item">
                                     <img src="../img/shop/shop-1-1.svg" alt="" />
-                                    <div class="com_illustrate">
-                                        <div class="ill_title">
+                                    <div className="com_illustrate">
+                                        <div className="ill_title">
                                             <h2>羊絨開衫</h2>
-                                            <div class="del_com">icon</div>
+                                            <div className="del_com">icon</div>
                                         </div>
                                         <div className="choice">
                                             <h2>顏色</h2>
@@ -63,9 +63,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="choice">
+                                        <div className="choice">
                                             <h2>尺寸</h2>
-                                            <div class="chlist">
+                                            <div className="chlist">
                                                 <select name="other" title="尺寸選項">
                                                     <option value="">尺寸</option>
                                                     <option value="S">S</option>
@@ -74,7 +74,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="product_buy">
+                                        <div className="product_buy">
                                             <div className="amount">
 
                                                 <button id="reduce" onClick={() => {
@@ -85,7 +85,7 @@
                                                     setNum(num + 1);
                                                 }}>+</button>
                                             </div>
-                                            <div class="product-title">
+                                            <div className="product-title">
                                                 <h2>NT 9999</h2>
                                             </div>
                                         </div>
@@ -94,34 +94,34 @@
                             </div>
 
 
-                            <div class="cal_checkout">
-                                <div class="cal_amount">
+                            <div className="cal_checkout">
+                                <div className="cal_amount">
                                     <h2>金額</h2>
-                                    <div class="totlist" id="subtotal">
+                                    <div className="totlist" id="subtotal">
                                         <h3>商品小計</h3>
                                         <p>123元 </p>
                                     </div>
-                                    <div class="totlist" id="freight">
+                                    <div className="totlist" id="freight">
                                         <h3>運費</h3>
                                         <p>123元 </p>
                                     </div>
-                                    <div class="totlist" id="alltotal">
+                                    <div className="totlist" id="alltotal">
                                         <h3>總計</h3>
                                         <h3>123元 </h3>
                                     </div>
                                 </div>
-                                <div class="cal_tranlist">
-                                    <div class="schedule">
-                                        <div class="schedule_list" id="schedule1">運送方式</div>
-                                        <div class="schedule_list" id="schedule2">支付方式</div>
-                                        <div class="schedule_list" id="schedule3">完成</div>
+                                <div className="cal_tranlist">
+                                    <div className="schedule">
+                                        <div className="schedule_list" id="schedule1">運送方式</div>
+                                        <div className="schedule_list" id="schedule2">支付方式</div>
+                                        <div className="schedule_list" id="schedule3">完成</div>
                                     </div>
-                                    <div class="transport_choice">
+                                    <div className="transport_choice">
                                         <h2>全家</h2>
                                         <h2>7-11</h2>
                                         <h2>萊爾富</h2>
                                         <h2>宅配</h2>
-                                        <button class="tranlist_btn">去結帳</button>
+                                        <button className="tranlist_btn">去結帳</button>
                                     </div>
 
                                 </div>
