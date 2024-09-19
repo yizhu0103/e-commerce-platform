@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Anta&family=Noto+Sans+SC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -185,6 +185,7 @@ img {
 body {
   color: #221712;
   background-color: #F5F5F5;
+  font-family: "Noto Serif TC", serif;
 }
 
 main {
@@ -275,6 +276,22 @@ main {
 #new .new_img {
   width: 60%;
   height: 100vh;
+  position: relative;
+}
+#new .new_img img {
+  width: 30%;
+  height: 60%;
+  object-fit: cover;
+}
+#new .new_img .new_img-1 {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+#new .new_img .new_img-2 {
+  position: absolute;
+  right: 15%;
+  bottom: 10%;
 }
 
 #shop {
@@ -283,6 +300,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(../img/index/shop-bkg.jpg) no-repeat;
+  background-size: auto 100%;
 }
 #shop .caption {
   display: flex;
@@ -295,7 +314,7 @@ main {
 }
 #shop .caption h2 {
   font-size: 2rem;
-  color: #221712;
+  color: #F5F5F5;
   font-weight: 1000;
 }
 #shop .shoplist {
@@ -304,19 +323,6 @@ main {
   height: 50vh;
   overflow-x: scroll;
   max-width: 1440px;
-}
-#shop .shoplist::-webkit-scrollbar {
-  background-color: transparent;
-}
-#shop .shoplist::-webkit-scrollbar-thumb {
-  border-radius: 99px;
-  background-color: #6F635B;
-}
-#shop .shoplist::-webkit-scrollbar-track {
-  margin: 0 200px;
-  border-radius: 99px;
-  border: #B7B7AB solid 2px;
-  background-color: #ECE6D3;
 }
 #shop .shoplist .pdulist {
   display: flex;
@@ -338,7 +344,7 @@ main {
 }
 #shop .shoplist .pdulist a p {
   font-size: 1.2rem;
-  color: #221712;
+  color: #F5F5F5;
   font-weight: 600;
 }
 
@@ -347,7 +353,7 @@ main {
   background-size: cover;
   border-bottom: #6F635B 20px solid;
   position: relative;
-  background-color: #000;
+  background-color: #100C14;
 }
 #fashion .fashbox {
   position: absolute;
@@ -386,6 +392,11 @@ main {
 #about .about {
   width: 55%;
   height: 100%;
+}
+#about .about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #about .aboutbox {
   width: 40%;

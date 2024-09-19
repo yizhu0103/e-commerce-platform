@@ -1,8 +1,5 @@
 /* Section-1 Styles */
-#banner-1 {
-  color: #fff;
-  background-color: #222;
-}
+
 
 #banner-1 .content-slider {
   position: relative;
@@ -83,18 +80,18 @@
 }
 
 #banner-1 .content-slider .slider #top-banner-1 {
-  /* background: url('../img/index/banner-1.jpg') no-repeat center center; */
-  background-size: cover;
+  background: url('../img/index/banner-1.jpg') no-repeat center center;
+  background-size:  auto 100%;
 }
 
 #banner-1 .content-slider .slider #top-banner-2 {
-  /* background: url('../img/index/banner-2.jpg') no-repeat center center; */
-  background-size: cover;
+  background: url('../img/index/banner-2.jpg') no-repeat center center;
+  background-size:  auto 100%;
 }
 
 #banner-1 .content-slider .slider #top-banner-3 {
-  /* background: url('../img/index/banner-3.jpg') no-repeat center center; */
-  background-size: cover;
+  background: url('../img/index/banner-3.jpg') no-repeat center center;
+  background-size:  auto 100%;
 }
 
 
