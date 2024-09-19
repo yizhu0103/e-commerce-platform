@@ -3,7 +3,9 @@ function Header() {
     return (
         <header id="topbar">
 
-            <div className="logo"><a href="../index.html"><h1>Elegancia</h1></a></div>
+            <div class="logo"><a href="../index.html">
+                <img src="../img/logo_transparent.png" alt="" />
+            </a></div>
             <nav className="navigation">
                 <ul className="menulist">
                     <li><a href="../index.html#new">最新</a></li>
@@ -78,12 +80,14 @@ function Options() {
 function Footer() {
     return (
         <footer>
-            <div class="footerlogo">
-                <div class="logo"><a href="../index.html"><h1>Elegancia</h1></a></div>
+           
+                <div class="logo"><a href="./index.html">
+                    <img src="../img/logo_transparent.png" alt="" />
+                </a></div>
                 <small>Copyright &copy; 2024 Elegancia. 保留一切權利。</small>
-            </div>
+       
 
-            <div class="footerlist">
+         {/*    <div class="footerlist">
 
                 <ul>
                     <li><a href="./shoplist.html">最新</a></li>
@@ -92,7 +96,7 @@ function Footer() {
                     <li><a href="#">關於</a></li>
                 </ul>
 
-            </div>
+            </div> */}
         </footer>)
 
 }

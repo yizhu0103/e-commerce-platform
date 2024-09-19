@@ -204,6 +204,22 @@ main {
   height: 10vh;
   position: static;
 }
+#topbar .logo {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#topbar .logo a {
+  width: 60%;
+  height: 60%;
+}
+#topbar .logo a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 #topbar .navigation {
   display: flex;
   justify-content: center;
@@ -391,6 +407,22 @@ footer {
   padding: 0 50px;
   background-color: #ECE6D3;
   height: 10vh;
+}
+footer .logo {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .logo a {
+  width: 60%;
+  height: 60%;
+}
+footer .logo a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 footer .footerlist {
   width: 20%;
@@ -1142,4 +1174,9 @@ footer .footerlist ul li a {
 }
 #emulator .emulator_content .emulator_btn button:hover {
   background-color: #6F635B;
+}
+#emulator .emulator_object {
+  width: 30%;
+  height: 100%;
+  border: #000 solid;
 }/*# sourceMappingURL=style.css.map */

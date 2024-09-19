@@ -225,13 +225,30 @@ main {
     width: 100%;
     height: 10vh;
     position: static;
-
+    .logo{
+        width:10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            width: 60%;
+            height: 60%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover
+            }
+        }
+       
+    }
 
     .navigation {
         @include flex-center;
         width: 30%;
         height: 6vh;
         justify-content: space-between;
+       
 
         .menulist {
             @include flex-align-center;
@@ -457,8 +474,25 @@ footer {
     width: 100%;
     padding: 0 50px;
     background-color: map-get($color , secondary);
-
     height: 10vh;
+
+    .logo{
+        width:10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            width: 60%;
+            height: 60%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover
+            }
+        }
+       
+    }
 
     .footerlist {
         width: 20%;
@@ -1409,5 +1443,10 @@ footer {
         }
 
 
+    }
+    .emulator_object{
+        width: 30%;
+        height: 100%;
+        border: #000 solid;
     }
 }
