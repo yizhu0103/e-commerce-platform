@@ -80,23 +80,7 @@ function Options() {
 function Footer() {
     return (
         <footer>
-           
-                <div class="logo"><a href="./index.html">
-                    <img src="../img/logo_transparent.png" alt="" />
-                </a></div>
-                <small>Copyright &copy; 2024 Elegancia. 保留一切權利。</small>
-       
-
-         {/*    <div class="footerlist">
-
-                <ul>
-                    <li><a href="./shoplist.html">最新</a></li>
-                    <li><a href="./shoplist.html">商品</a></li>
-                    <li><a href="./emulator.html">模擬器</a></li>
-                    <li><a href="#">關於</a></li>
-                </ul>
-
-            </div> */}
+            <small>Copyright &copy; 2024 Elegancia. 保留一切權利。本網頁為練習網頁無任何商業活動</small>
         </footer>)
 
 }

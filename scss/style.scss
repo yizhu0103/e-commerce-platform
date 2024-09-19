@@ -207,7 +207,6 @@ img {
 body {
     color: map-get($color , font-color);
     background-color: map-get($color, bkgcolor);
-    font-family: $font-family-en;
 
 }
 
@@ -219,12 +218,13 @@ main {
 #topbar {
     @include flex-align-center;
     justify-content: space-between;
-    background-color: map-get($color , secondary);
+    background-color:transparent;
     margin: 0;
     padding: 0 50px;
     width: 100%;
     height: 10vh;
-    position: static;
+    position: fixed;
+    z-index: 999;
 
     .logo {
         width: 10%;
@@ -321,7 +321,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: map-get($color , assistbroen) 20px solid;
+    // border-top: map-get($color , assistbroen) 20px solid;
 
 
     .caption {
@@ -399,6 +399,7 @@ main {
     background-size: cover;
     border-bottom: map-get($color , assistbroen) 20px solid;
     position: relative;
+    background-color: #000;
 
     .fashbox {
         position: absolute;
@@ -473,7 +474,7 @@ main {
 
 footer {
     @include flex-center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     padding: 0 50px;
     background-color: map-get($color , secondary);
@@ -546,6 +547,7 @@ footer {
     align-items: flex-start;
     height: auto;
     min-height: 150vh;
+    padding-top: 12vh;
 
 
 
@@ -699,7 +701,7 @@ footer {
 #shopbox {
     @include flex-column;
     height: auto;
-    margin-top: 5vh;
+    padding-top: 12vh;
 
 
     .product {
@@ -1139,7 +1141,7 @@ footer {
 #checkout {
     flex-direction: column;
     height: auto;
-    margin-top: 5vh;
+    padding-top: 12vh;
 
     .shoppingcar {
         width: 90%;
@@ -1475,15 +1477,16 @@ footer {
         .emulator_itemlist {
             width: 100%;
             height: 80%;
-            padding:0 5% ;
-            .emulator_item{
+            padding: 0 5%;
+
+            .emulator_item {
                 width: 100%;
                 height: 10%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 padding: 0 10px;
-                margin: 20px 0 ;
+                margin: 20px 0;
                 background-color: map-get($color , bkgcolor);
             }
         }

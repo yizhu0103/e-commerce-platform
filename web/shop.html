@@ -32,7 +32,7 @@
             function App() {
                 const [num, setNum] = useState(0);
 
-                const [currentPic, setCurrentPic] = useState('../img/shop/shop-1.jpg');
+                const [currentPic, setCurrentPic] = useState('');
 
                 // Function to change the displayed picture
                 const changePic = (picNumber) => {
@@ -40,19 +40,19 @@
 
                     switch (picNumber) {
                         case 1:
-                            newPic = '../img/shop/shop-1.jpg';
+                            newPic = '';
                             break;
                         case 2:
-                            newPic = '../img/shop/shop-2.jpg';
+                            newPic = '';
                             break;
                         case 3:
-                            newPic = '../img/shop/shop-3.jpg';
+                            newPic = '';
                             break;
                         case 4:
-                            newPic = '../img/shop/shop-4.jpg';
+                            newPic = '';
                             break;
                         default:
-                            newPic = '../img/shop/shop-4.jpg';
+                            newPic = '';
                     }
 
                     setCurrentPic(newPic);
@@ -64,7 +64,7 @@
                         id: 1,
                         title: '寧靜時光大衣',
                         nature: '最新商品',
-                        img: '../img/index/banner-2.jpg',
+                        img:'',
                         price: '9,999',
                         alt: 'Product Image',
                         appraise: '超級好穿'
@@ -72,7 +72,7 @@
                         id: 2,
                         title: '好穿的褲子',
                         nature: '最新商品',
-                        img: '../img/index/banner-3.jpg',
+                        img:'',
                         price: '9,999',
                         alt: 'Product Image',
                         appraise: '宇宙好穿'
@@ -81,7 +81,7 @@
                         title: '羊絨開衫',
                         className: '',
                         nature: '',
-                        img: '../img/index/shoplist-1.jpg',
+                        img: '',
                         price: '9,999',
                         alt: 'Product Image',
                         appraise: '穿上不後悔'
@@ -90,7 +90,7 @@
                         title: '雪紡襯衫',
                         className: '',
                         nature: '',
-                        img: '../img/index/shoplist-2.jpg',
+                        img: '',
                         price: '8,888',
                         alt: 'Product Image',
                         appraise: '超級貴不好穿'
@@ -98,7 +98,7 @@
                         id: 5,
                         title: '職業裝',
                         nature: '',
-                        img: '../img/index/shoplist-3.jpg',
+                        img: '',
                         className: '',
                         price: '7,777',
                         alt: 'Product Image',
@@ -108,7 +108,7 @@
                         title: '雪紡高腰闊腿褲',
                         className: '',
                         nature: '',
-                        img: '../img/index/shoplist-4.jpg',
+                        img: '',
                         price: '6,666',
                         alt: 'Product Image',
                         appraise: '----'
@@ -119,15 +119,15 @@
 
                 return (
                     <>
-                        <Header />
+                    <Header/>
                         <section id="shopbox">
                             <div className="product">
                                 <div className="product-img">
                                     <div className="proimglist">
-                                        <div className="box"><img onClick={() => changePic(1)} src="../img/shop/shop-1.jpg" alt="" /></div>
-                                        <div className="box"><img onClick={() => changePic(2)} src="../img/shop/shop-2.jpg" alt="" /></div>
-                                        <div className="box"><img onClick={() => changePic(3)} src="../img/shop/shop-3.jpg" alt="" /></div>
-                                        <div className="box"><img onClick={() => changePic(4)} src="../img/shop/shop-4.jpg" alt="" /></div>
+                                        <div className="box"><img onClick={() => changePic(1)} src="" alt="" /></div>
+                                        <div className="box"><img onClick={() => changePic(2)} src="" alt="" /></div>
+                                        <div className="box"><img onClick={() => changePic(3)} src="" alt="" /></div>
+                                        <div className="box"><img onClick={() => changePic(4)} src="" alt="" /></div>
                                     </div>
                                     <div className="showimglist">
                                         <img id="pic" src={currentPic} alt="" />

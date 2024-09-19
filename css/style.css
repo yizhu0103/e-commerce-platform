@@ -185,7 +185,6 @@ img {
 body {
   color: #221712;
   background-color: #F5F5F5;
-  font-family: "Anta", sans-serif;
 }
 
 main {
@@ -197,12 +196,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ECE6D3;
+  background-color: transparent;
   margin: 0;
   padding: 0 50px;
   width: 100%;
   height: 10vh;
-  position: static;
+  position: fixed;
+  z-index: 999;
 }
 #topbar .logo {
   width: 10%;
@@ -283,7 +283,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: #6F635B 20px solid;
 }
 #shop .caption {
   display: flex;
@@ -348,6 +347,7 @@ main {
   background-size: cover;
   border-bottom: #6F635B 20px solid;
   position: relative;
+  background-color: #000;
 }
 #fashion .fashbox {
   position: absolute;
@@ -402,7 +402,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   padding: 0 50px;
   background-color: #ECE6D3;
@@ -469,6 +469,7 @@ footer .footerlist ul li a {
   align-items: flex-start;
   height: auto;
   min-height: 150vh;
+  padding-top: 12vh;
 }
 #shoplist .shoplist-menu {
   display: flex;
@@ -582,7 +583,7 @@ footer .footerlist ul li a {
   display: flex;
   flex-direction: column;
   height: auto;
-  margin-top: 5vh;
+  padding-top: 12vh;
 }
 #shopbox .product {
   width: 80%;
@@ -934,7 +935,7 @@ footer .footerlist ul li a {
 #checkout {
   flex-direction: column;
   height: auto;
-  margin-top: 5vh;
+  padding-top: 12vh;
 }
 #checkout .shoppingcar {
   width: 90%;
