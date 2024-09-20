@@ -262,19 +262,18 @@ main {
 }
 
 #new {
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 #new .item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 25%;
+  width: 30%;
   height: 40vh;
-  margin-left: 10%;
 }
 #new .new_img {
-  width: 60%;
+  width: 40%;
   height: 100vh;
   position: relative;
 }
@@ -300,8 +299,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(../img/index/shop-bkg.jpg) no-repeat;
-  background-size: auto 100%;
 }
 #shop .caption {
   display: flex;
@@ -597,7 +594,7 @@ footer .footerlist ul li a {
   padding-top: 12vh;
 }
 #shopbox .product {
-  width: 80%;
+  width: 70%;
   height: 55vh;
   display: flex;
   justify-content: space-between;
@@ -606,7 +603,7 @@ footer .footerlist ul li a {
 }
 #shopbox .product .product-img {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 50%;
   height: 100%;
 }
@@ -635,7 +632,7 @@ footer .footerlist ul li a {
 #shopbox .product .product-img .showimglist {
   display: flex;
   justify-content: center;
-  width: 78%;
+  width: 60%;
   height: 100%;
 }
 #shopbox .product .product-img .showimglist img {
