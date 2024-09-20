@@ -4,7 +4,7 @@ function Header() {
         <header id="topbar">
 
             <div class="logo"><a href="../index.html">
-                <img src="../img/logo_transparent.png" alt="" />
+            <h1>錦繡閣</h1>
             </a></div>
             <nav className="navigation">
                 <ul className="menulist">
@@ -80,7 +80,7 @@ function Options() {
 function Footer() {
     return (
         <footer>
-            <small>Copyright &copy; 2024 Elegancia. 保留一切權利。本網頁為練習網頁無任何商業活動</small>
+            <small>Copyright &copy; 2024 本網頁為練習網頁無任何商業活動</small>
         </footer>)
 
 }

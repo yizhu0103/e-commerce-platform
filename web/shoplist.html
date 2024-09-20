@@ -74,8 +74,8 @@
                 const products = [
                     {
                         id: 1,
-                        title: '寧靜時光大衣',
-                        className: 'coat new',
+                        title: '亞麻圓領短衫',
+                        className: 'shirt',
                         nature: '',
                         img: '../img/shop/shoplist-1.jpg',
                         price: '9,999',
@@ -83,8 +83,8 @@
                         appraise: ''
                     }, {
                         id: 2,
-                        title: '西裝外套',
-                        className: 'coat new',
+                        title: '休閒圓領短袖上衣',
+                        className: 'shirt',
                         nature: '',
                         img: '../img/shop/shoplist-2.jpg',
                         price: '9,999',
@@ -92,95 +92,95 @@
                         appraise: ''
                     }, {
                         id: 3,
-                        title: '好穿的褲子',
-                        className: 'trousers new',
+                        title: '長袖上衣',
+                        className: 'shirt',
                         nature: '',
                         img: '../img/shop/shoplist-3.jpg',
                         price: '9,999',
                         alt: 'Product Image',
-                        appraise: '宇宙好穿'
+                        appraise: ''
                     }, {
                         id: 4,
-                        title: '羊絨開衫',
-                        className: '',
+                        title: '蠶絲短衫',
+                        className: 'shirt',
                         nature: '',
                         img: '../img/shop/shoplist-4.jpg',
                         price: '9,999',
                         alt: 'Product Image',
-                        appraise: '穿上不後悔'
+                        appraise: ''
                     }, {
                         id: 5,
-                        title: '雪紡襯衫',
-                        className: 'shirt',
+                        title: '短袖連衣裙',
+                        className: 'skirt',
                         nature: '',
                         img: '../img/shop/shoplist-5.jpg',
                         price: '8,888',
                         alt: 'Product Image',
-                        appraise: '超級貴不好穿'
+                        appraise: ''
                     }, {
                         id: 6,
-                        title: '職業裝',
-                        className: 'leisure',
+                        title: '絲絨連衣裙',
+                        className: 'skirt promotion',
                         nature: '',
                         img: '../img/shop/shoplist-6.jpg',
                         price: '7,777',
                         alt: 'Product Image',
-                        appraise: '----'
+                        appraise: ''
                     }, {
                         id: 7,
-                        title: '雪紡高腰闊腿褲',
-                        className: 'trousers',
+                        title: '蠶絲連衣裙',
+                        className: 'skirt',
                         nature: '',
                         img: '../img/shop/shoplist-7.jpg',
                         price: '6,666',
                         alt: 'Product Image',
-                        appraise: '----'
+                        appraise: ''
                     }, {
                         id: 8,
-                        title: '經典小黑裙',
-                        className: 'dress',
+                        title: '酒紅半身裙',
+                        className: 'skirt',
                         nature: '',
                         img: '../img/shop/shoplist-8.jpg',
                         price: '1,234',
                         alt: 'Product Image',
-                        appraise: '----'
+                        appraise: ''
                     }
                     , {
                         id: 9,
-                        title: '雪紡襯衫',
-                        className: 'shirt',
+                        title: '雙層半身裙',
+                        className: 'skirt promotion',
                         nature: '',
                         img: '../img/shop/shoplist-9.jpg',
                         price: '8,888',
                         alt: 'Product Image',
-                        appraise: '----'
+                        appraise: ''
                     }, {
                         id: 10,
-                        title: '職業裝',
-                        className: 'leisure',
+                        title: '褲子',
+                        className: 'pants promotion',
                         nature: '',
                         img: '../img/shop/shoplist-10.jpg',
                         price: '7,777',
                         alt: 'Product Image',
-                        appraise: '----'
+                        appraise: ''
                     }, {
                         id: 11,
-                        title: '雪紡高腰闊腿褲',
-                        className: 'trousers',
+                        title: '布包',
+                        className: 'fitting',
                         nature: '',
                         img: '../img/shop/shoplist-11.jpg',
                         price: '6,666',
                         alt: 'Product Image',
-                        appraise: '----'
+                        appraise: ''
                     }, {
                         id: 12,
-                        title: '經典小黑裙',
-                        className: 'dress',
+                        title: '顯瘦旗袍套裝',
+                        className: 'suit',
                         nature: '',
                         img: '../img/shop/shoplist-12.jpg',
                         price: '1,234',
                         alt: 'Product Image',
-                        appraise: '----'
+                        appraise: ''
                     }
                 ];
                 const handleCategoryClick = (category) => {
@@ -192,30 +192,28 @@
                 <section id="shoplist">
                     <div className="shoplist-menu">
                         <div className="commodity" id="filterBtn">
-                            <h2>最新商品</h2>
-                            <h3 className="new" onClick={() => handleCategoryClick('最新商品')}>最新商品</h3>
+                            <h2>促銷商品</h2>
+                            <h3 className="promotion" onClick={() => handleCategoryClick('促銷商品')}>多件優惠</h3>
                             <h2>商品分類</h2>
                             <h3 className="allItem" onClick={() => handleCategoryClick('全部商品')}>全部商品</h3>
-                            <h3 className="coat" onClick={() => handleCategoryClick('外套')}>外套</h3>
-                            <h3 className="knitted" onClick={() => handleCategoryClick('針織衫')}>針織衫</h3>
-                            <h3 className="shirt" onClick={() => handleCategoryClick('襯衫')}>襯衫</h3>
-                            <h3 className="leisure" onClick={() => handleCategoryClick('套裝')}>套裝</h3>
-                            <h3 className="dress" onClick={() => handleCategoryClick('洋裝')}>洋裝</h3>
+                            <h3 className="shirt" onClick={() => handleCategoryClick('上衣')}>上衣</h3>
+                            <h3 className="pants" onClick={() => handleCategoryClick('褲子')}>褲子</h3>
                             <h3 className="skirt" onClick={() => handleCategoryClick('裙子')}>裙子</h3>
-                            <h3 className="trousers" onClick={() => handleCategoryClick('褲裝')}>褲裝</h3>
-                            <h3 className="inner" onClick={() => handleCategoryClick('內搭')}>內搭</h3>
+                            <h3 className="suit" onClick={() => handleCategoryClick('套裝')}>套裝</h3>
                             <h3 className="fitting" onClick={() => handleCategoryClick('配件')}>配件</h3>
-                            <h3 className="shoes" onClick={() => handleCategoryClick('鞋子')}>鞋子</h3>
+                            
+
                         </div>
                     </div>
 
                     <div className="shoplist-main">
                         <div className="carouselimg" id="carousel">
                             <ul>
-                                <li><img src="" alt="" /></li>
-                                <li><img src="" alt="" /></li>
-                                <li><img src="" alt="" /></li>
-                            </ul>
+                                <li><img src="../img/index/banner-2.jpg" alt="" /></li>
+                                <li><img src="../img/index/banner-1.jpg" alt="" /></li>
+                                <li><img src="../img/index/banner-2.jpg" alt="" /></li>
+                                <li><img src="../img/index/banner-1.jpg" alt="" /></li>
+                                </ul>
                         </div>
                         <div className="commodity">
                             {/* Update the h2 text with the selected category */}

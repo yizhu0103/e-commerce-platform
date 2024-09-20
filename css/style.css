@@ -213,13 +213,15 @@ main {
   align-items: center;
 }
 #topbar .logo a {
-  width: 60%;
-  height: 60%;
-}
-#topbar .logo a img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#topbar .logo a h1 {
+  font-size: 2rem;
+  font-weight: 800;
 }
 #topbar .navigation {
   display: flex;
@@ -299,6 +301,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #C0BFB2;
 }
 #shop .caption {
   display: flex;
@@ -314,11 +317,13 @@ main {
   color: #F5F5F5;
   font-weight: 1000;
 }
+#shop .caption a {
+  color: #F5F5F5;
+}
 #shop .shoplist {
   display: flex;
-  width: 90%;
+  width: 100%;
   height: 50vh;
-  overflow-x: scroll;
   max-width: 1440px;
 }
 #shop .shoplist .pdulist {
@@ -346,17 +351,14 @@ main {
 }
 
 #fashion {
-  justify-content: flex-start;
+  justify-content: space-between;
   background-size: cover;
   border-bottom: #6F635B 20px solid;
-  position: relative;
-  background-color: #100C14;
+  background-color: #C0BFB2;
 }
 #fashion .fashbox {
-  position: absolute;
   z-index: 888;
   border: #F5F5F5 solid 2px;
-  box-shadow: 0em 0em 0.2em #000;
   margin-left: 12%;
   width: 30%;
   padding: 15px;
@@ -376,11 +378,13 @@ main {
 #fashion .fashbox .more a {
   color: #F5F5F5;
 }
-#fashion video {
-  object-fit: cover;
-  width: 100%;
+#fashion .example {
+  width: 50%;
   height: 100%;
-  filter: brightness(60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #000 solid;
 }
 
 #about {
@@ -415,22 +419,6 @@ footer {
   padding: 0 50px;
   background-color: #ECE6D3;
   height: 10vh;
-}
-footer .logo {
-  width: 10%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .logo a {
-  width: 60%;
-  height: 60%;
-}
-footer .logo a img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 footer .footerlist {
   width: 20%;
@@ -786,21 +774,7 @@ footer .footerlist ul li a {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 10vh;
-  overflow-x: scroll;
   max-width: 1440px;
-}
-#shopbox .morelist::-webkit-scrollbar {
-  background-color: transparent;
-}
-#shopbox .morelist::-webkit-scrollbar-thumb {
-  border-radius: 99px;
-  background-color: #6F635B;
-}
-#shopbox .morelist::-webkit-scrollbar-track {
-  margin: 0 200px;
-  border-radius: 99px;
-  border: #B7B7AB solid 2px;
-  background-color: #ECE6D3;
 }
 #shopbox .morelist .moreproduct {
   display: flex;
