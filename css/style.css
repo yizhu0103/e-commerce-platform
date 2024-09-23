@@ -358,25 +358,24 @@ main {
 }
 #fashion .fashbox {
   z-index: 888;
-  border: #F5F5F5 solid 2px;
   margin-left: 12%;
   width: 30%;
   padding: 15px;
 }
 #fashion .fashbox h3 {
-  color: #F5F5F5;
+  color: #221712;
   font-size: 1.5rem;
 }
 #fashion .fashbox h2 {
-  color: #F5F5F5;
+  color: #221712;
   font-size: 2rem;
 }
 #fashion .fashbox p {
-  color: #F5F5F5;
+  color: #221712;
   font-size: 1.5rem;
 }
 #fashion .fashbox .more a {
-  color: #F5F5F5;
+  color: #221712;
 }
 #fashion .example {
   width: 50%;
@@ -651,7 +650,7 @@ footer .footerlist ul li a {
 }
 #shopbox .product .product-ifon .choice {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   justify-content: space-between;
   width: 70%;
   padding-bottom: 2px;

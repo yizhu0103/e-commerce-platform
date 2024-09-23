@@ -345,9 +345,6 @@ main {
     justify-content: center;
     align-items: center;
 background-color:map-get($color , assistGray);
-    // background-size: auto 100%;
-
-    // border-top: map-get($color , assistbroen) 20px solid;
 
 
     .caption {
@@ -376,23 +373,6 @@ background-color:map-get($color , assistGray);
         max-width: 1440px;
         
 
-
-        // &::-webkit-scrollbar {
-        //     background-color: transparent;
-
-        // }
-
-        // &::-webkit-scrollbar-thumb {
-        //     border-radius: 99px;
-        //     background-color: map-get($color , assistbroen);
-        // }
-
-        // &::-webkit-scrollbar-track {
-        //     margin: 0 200px;
-        //     border-radius: 99px;
-        //     border: map-get($color , assistGray-2) solid 2px;
-        //     background-color: map-get($color , secondary);
-        // }
 
         .pdulist {
             display: flex;
@@ -433,30 +413,30 @@ background-color:map-get($color , assistGray);
     .fashbox {
         
         z-index: 888;
-        border: map-get($color , bkgcolor) solid 2px;
+        
         margin-left: 12%;
         width: 30%;
         padding: 15px;
 
         h3 {
-            color: map-get($color , bkgcolor);
+            color: map-get($color , font-color);
             font-size: 1.5rem;
         }
 
         h2 {
-            color: map-get($color , bkgcolor);
+            color: map-get($color , font-color);
             font-size: 2rem;
         }
 
         p {
-            color: map-get($color , bkgcolor);
+            color: map-get($color , font-color);
             font-size: 1.5rem;
         }
 
         .more {
 
             a {
-                color: map-get($color , bkgcolor);
+                color: map-get($color , font-color);
             }
 
         }
@@ -806,8 +786,7 @@ footer {
             }
 
             .choice {
-                display: flex;
-                align-items: flex-end;
+                @include flex-column;
                 justify-content: space-between;
                 width: 70%;
                 padding-bottom: 2px;
