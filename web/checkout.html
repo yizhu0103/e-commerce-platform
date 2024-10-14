@@ -17,99 +17,199 @@
 </head>
 
 <body>
-   
     <main>
-        </head>
-
         <div id="root"></div>
         <script type="text/babel">
-            const { useState } = React;
-    
+            const { useState, useEffect } = React;
 
             function App() {
-                const [num, setNum] = useState(0);
-                return <>
-                    <Header />
+                const [cart, setCart] = useState([]);
+                const [totalPrice, setTotalPrice] = useState(0);
+                const [shipping, setShipping] = useState('全家');
+                const [price, setPrice] = useState(100); // 初始價格為 100
 
-                    <section id="checkout">
-                        <h2 className="shoppingcar">購物車</h2>
-                        <div className="chechoutlist">
-                            <div className="com_checkout">
-                                <div className="com_checkout_item">
-                                    <img src="../img/shop/shop-1.jpg" alt="" />
-                                    <div className="com_illustrate">
-                                        <div className="ill_title">
-                                            <h2>寧靜時光大衣</h2>
-                                            <div className="del_com"><img src="../img/checkout/trash.svg" alt=""/></div>
+                useEffect(() => {
+                    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+                    setCart(storedCart);
+                }, []);
+
+                // 增加數量
+                const increaseQuantity = (index) => {
+                    const newCart = [...cart];
+                    newCart[index].quantity += 1;
+                    setCart(newCart);
+                    localStorage.setItem('cart', JSON.stringify(newCart));
+                };
+
+                // 減少數量
+                const decreaseQuantity = (index) => {
+                    const newCart = [...cart];
+                    if (newCart[index].quantity > 1) {
+                        newCart[index].quantity -= 1;
+                        setCart(newCart);
+                        localStorage.setItem('cart', JSON.stringify(newCart));
+                    } else {
+                        alert('商品數量無法低於 1');
+                    }
+                };
+
+                // 刪除商品
+                const removeItem = (index) => {
+                    const newCart = [...cart];
+                    newCart.splice(index, 1);
+                    setCart(newCart);
+                    localStorage.setItem('cart', JSON.stringify(newCart));
+                };
+
+                // 更新運費與總價
+                const updateShipping = (value) => {
+                    setShipping(parseInt(value));
+                };
+
+                useEffect(() => {
+                    const newTotalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+                    setTotalPrice(newTotalPrice);
+                }, [cart]);
+
+
+
+                // 設定運送方式和價格
+
+
+                // 處理運送方式的選擇
+                const selectShipping = (option) => {
+                    setShipping(option);
+
+                    // 根據選擇的運送方式更新價格
+                    switch (option) {
+                        case '全家':
+                            setPrice(100);
+                            break;
+                        case '7-11':
+                            setPrice(120);
+                            break;
+                        case '宅配':
+                            setPrice(150);
+                            break;
+                        default:
+                            setPrice(100);
+                    }
+                };
+
+
+                return (
+                    <>
+                        <Header />
+                        <section id="checkout">
+                            <h2 className="shoppingcar">購物車</h2>
+
+                            <div className="chechoutlist">
+                                <div className="com_checkout">
+                                    <ul id="cart-items" >
+                                        {cart.length === 0 ? (
+                                            <h3>您的購物車是空的</h3>
+                                        ) : (
+                                            cart.map((item, index) => (
+                                                <li key={index} className="com_checkout_item">
+                                                    <img src={item.image} alt={item.name} />
+                                                    <div className="com_illustrate">
+                                                        <div className="ill_title">
+                                                            <h2>  {item.name} </h2>
+                                                            <div className="del_com"><button onClick={() => removeItem(index)}><img src="../img/checkout/trash.svg" alt="" /></button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="choice">
+                                                            <h3>顏色：{item.color}</h3>
+                                                            <h3> 尺寸：{item.size}</h3>
+
+
+                                                        </div>
+                                                        <div className="product_buy">
+                                                            <div className="amount">
+
+                                                                <button onClick={() => decreaseQuantity(index)}>-</button>
+                                                                {item.quantity}
+                                                                <button onClick={() => increaseQuantity(index)}>+</button>
+
+                                                            </div>
+                                                            <div className="product-title">
+                                                                <h2>NT {item.price * item.quantity}</h2>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </li>
+                                            ))
+                                        )}
+                                    </ul>
+                                </div>
+
+                                <div className="cal_checkout">
+                                    <div className="cal_amount">
+                                        <h2>金額</h2>
+                                        <div className="totlist" id="subtotal">
+                                            <p>商品總價：${totalPrice}</p>
                                         </div>
-                                        <Options/>
-                                        <div className="product_buy">
-                                            <div className="amount">
+                                        <div className="totlist" id="freight">
+                                            <p>運費：${price}</p>
+                                        </div>
+                                        <div className="totlist" id="alltotal">
+                                            <p>結帳總金額：${totalPrice + price}</p>
+                                        </div>
+                                    </div>
 
-                                                <button id="reduce" onClick={() => {
-                                                    setNum(num - 1);
-                                                }}>-</button>
-                                                <span>{num}</span>
-                                                <button id="increase" onClick={() => {
-                                                    setNum(num + 1);
-                                                }}>+</button>
+                                    <div className="cal_tranlist">
+                                        <div className="schedule">
+                                            <div className="schedule_list" id="schedule1">
+                                                <h3>運送方式</h3>
                                             </div>
-                                            <div className="product-title">
-                                                <h2>NT 9999</h2>
+                                            <div className="schedule_list" id="schedule2">
+                                                <h3>支付方式</h3>
                                             </div>
+                                            <div className="schedule_list" id="schedule3">
+                                                <h3>完成</h3>
+                                            </div>
+                                        </div>
+
+                                        <div className="transport_choice">
+                                            <h2
+                                                style={{ cursor: 'pointer', color: shipping === '全家' ? '#F5F5F5' : '#221712', backgroundColor: shipping === '全家' ? '#221712' : '#F5F5F5' }}
+                                                onClick={() => selectShipping('全家')}
+                                            >
+                                                全家
+                                            </h2>
+
+                                            <h2
+                                                style={{ cursor: 'pointer', color: shipping === '7-11' ? '#F5F5F5' : '#221712', backgroundColor: shipping === '7-11' ? '#221712' : '#F5F5F5' }}
+                                                onClick={() => selectShipping('7-11')}
+                                            >
+                                                7-11
+                                            </h2>
+
+                                            <h2
+                                                style={{ cursor: 'pointer', color: shipping === '宅配' ? '#F5F5F5' : '#221712', backgroundColor: shipping === '宅配' ? '#221712' : '#F5F5F5' }}
+                                                onClick={() => selectShipping('宅配')}
+                                            >
+                                                宅配
+                                            </h2>
+                                        </div>
+
+                                        <div className="tranlist_btn">
+                                            <button>下一步</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div className="cal_checkout">
-                                <div className="cal_amount">
-                                    <h2>金額</h2>
-                                    <div className="totlist" id="subtotal">
-                                        <h3>商品小計</h3>
-                                        <p>123元 </p>
-                                    </div>
-                                    <div className="totlist" id="freight">
-                                        <h3>運費</h3>
-                                        <p>123元 </p>
-                                    </div>
-                                    <div className="totlist" id="alltotal">
-                                        <h3>總計</h3>
-                                        <h3>123元 </h3>
-                                    </div>
-                                </div>
-                                <div className="cal_tranlist">
-                                    <div className="schedule">
-                                        <div className="schedule_list" id="schedule1"><h3>運送方式</h3></div>
-                                        <div className="schedule_list" id="schedule2"><h3>支付方式</h3></div>
-                                        <div className="schedule_list" id="schedule3"><h3>完成</h3></div>
-                                    </div>
-                                    <div className="transport_choice">
-                                        <h2>全家</h2>
-                                        <h2>7-11</h2>
-                                        <h2>萊爾富</h2>
-                                        <h2>宅配</h2>
-                                     
-                                    </div>
-                                    <div className="tranlist_btn"><button >下一步</button></div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                    </section>
-
-
-
-
-                    <Footer />
-
-
-                </>
+                        </section>
+                        <Footer />
+                    </>
+                );
             }
-            const root = ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
+            ReactDOM.createRoot(document.getElementById('root')).render(<App />);
         </script>
     </main>
 </body>

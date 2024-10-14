@@ -4,13 +4,13 @@ function Header() {
         <header id="topbar">
 
             <div class="logo"><a href="../index.html">
-            <h1>錦繡閣</h1>
+                <h1>錦繡閣</h1>
             </a></div>
             <nav className="navigation">
                 <ul className="menulist">
                     <li><a href="../index.html#new">最新</a></li>
                     <li><a href="./shoplist.html">商品</a></li>
-                    <li><a href="./emulator.html">模擬器</a></li>
+                    {/* <li><a href="./emulator.html">模擬器</a></li> */}
                     <li><a href="#">關於</a></li>
                 </ul>
                 <ul className="iconlist">
@@ -50,34 +50,34 @@ function Card(props) {
 
 function Options() {
     return <>
-        <div className="choice">
-            <h2>顏色</h2>
-            <div className="chlist">
-                <select name="other" title="顏色選項">
-                    <option defaultValue="黑">黑</option>
-                    <option defaultValue="白">白</option>
-                    <option defaultValue="灰">灰</option>
+
+  
+
+            <div className="choice">
+                <label>顏色：</label>
+                <select id="color" title="顏色選項">
+                    <option value="紅色">紅色</option>
+                    <option value="藍色">藍色</option>
+                    <option value="綠色">綠色</option>
                 </select>
             </div>
-        </div>
-        <div className="choice">
-            <h2>尺寸</h2>
-            <div className="chlist">
-                <select name="other" title="尺寸選項">
+            <div className="choice">
+                <label>尺寸：</label>
+                <select id="size">
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                 </select>
-            </div>
-        </div>
-    </>
+                </div>
+          
+        </>
 }
 
 
 
 
 
-function Footer() {
+        function Footer() {
     return (
         <footer>
             <small>Copyright &copy; 2024 本網頁為練習網頁無任何商業活動</small>

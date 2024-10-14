@@ -226,6 +226,7 @@ main {
     height: 10vh;
     position: fixed;
     z-index: 999;
+    background-color: map-get($color,bkgcolor );
 
     .logo {
         width: 10%;
@@ -253,7 +254,7 @@ main {
 
     .navigation {
         @include flex-center;
-        width: 30%;
+        width: 25%;
         height: 6vh;
         justify-content: space-between;
         
@@ -769,11 +770,6 @@ footer {
             .product-title {
                 color: map-get($color , font-color);
 
-                h3 {
-                    font-size: 2rem;
-                    font-weight: 900;
-                }
-
                 p {
                     margin-bottom: 20px;
                 }
@@ -786,14 +782,14 @@ footer {
             }
 
             .choice {
-                @include flex-column;
+                display: flex;
                 justify-content: space-between;
                 width: 70%;
                 padding-bottom: 2px;
                 margin-bottom: 15px;
                 border-bottom: solid 2px map-get($color , font-color);
 
-                h2 {
+                .title {
                     font-size: 1rem;
                     font-weight: 800;
                 }
@@ -808,7 +804,6 @@ footer {
                 height: 10vh;
 
                 .amount {
-
                     width: 25%;
                     height: 5vh;
                     display: flex;
@@ -1133,7 +1128,6 @@ footer {
     .chechoutlist {
         display: flex;
         justify-content: space-between;
-        // border: #000 solid;
         width: 90%;
         max-width: 1440px;
         height: auto;
@@ -1142,6 +1136,12 @@ footer {
         .com_checkout {
             width: 60%;
             height: 100%;
+            #cart-items{
+                h3{
+                    font-size: 1.5rem;
+                    
+                }
+            }
 
             .com_checkout_item {
                 display: flex;
@@ -1151,6 +1151,7 @@ footer {
                 height: 30vh;
                 padding: 10px;
                 border-bottom: map-get($color , assistGray) solid;
+                
 
                 img {
                     width: 25%;
@@ -1160,14 +1161,15 @@ footer {
                 }
 
                 .com_illustrate {
+                    
                     width: 73%;
                     height: 20vh;
-
-                    // border: #000 solid;
+                    
                     .ill_title {
                         display: flex;
                         justify-content: space-between;
                         width: 90%;
+                        
 
                         h2 {
                             font-weight: 900;
@@ -1186,26 +1188,9 @@ footer {
                         }
                     }
 
-                    .choice {
-                        width: 80%;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        border-bottom: #000 solid;
-
-                        h2 {
-                            font-size: 1rem;
-                            font-weight: 900;
-                        }
-
-                        select {
-                            font-size: .75rem;
-                            height: 4vh;
-                        }
-
-                    }
 
                     .product_buy {
+                        
                         width: 80%;
                         display: flex;
                         justify-content: space-between;

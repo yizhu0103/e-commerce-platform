@@ -60,7 +60,7 @@
 
 
                 const products = [
-                {
+                    {
                         id: 1,
                         title: '亞麻圓領短衫',
                         className: 'shirt',
@@ -112,12 +112,12 @@
 
                 return (
                     <>
-                    <Header/>
+                        <Header />
                         <section id="shopbox">
                             <div className="product">
                                 <div className="product-img">
                                     <div className="proimglist">
-                                        <div className="box"><img onClick={() => changePic(1)} src="../img/shop/shop-1.jpg" alt="" /></div>
+                                        <div className="box"><img onClick={() => changePic(1)} src="../img/shop/shop-1.jpg" alt="商品1圖片" /></div>
                                         <div className="box"><img onClick={() => changePic(2)} src="../img/shop/shop-2.jpg" alt="" /></div>
                                         <div className="box"><img onClick={() => changePic(3)} src="../img/shop/shop-3.jpg" alt="" /></div>
                                         <div className="box"><img onClick={() => changePic(4)} src="../img/shop/shop-4.jpg" alt="" /></div>
@@ -128,7 +128,51 @@
                                 </div>
 
                                 <div className="product-ifon">
+
+
                                     <div className="product-title">
+                                        <h2>寧靜時光大衣</h2>
+                                        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, aliquid.</h5>
+                                        <p>價格：$200</p>
+                                    </div>
+
+
+                                    <div className="choice">
+                                        <label className="title">顏色：</label>
+                                        <div className="chlist">
+                                            <select id="color" title="顏色選項">
+                                                <option value="紅色">紅色</option>
+                                                <option value="藍色">藍色</option>
+                                                <option value="綠色">綠色</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="choice">
+                                        <label className="title">尺寸：</label>
+                                        <div className="chlist">
+                                            <select id="size">
+                                                <option value="S">S</option>
+                                                <option value="M">M</option>
+                                                <option value="L">L</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div className="product_buy">
+                                        <h3>數量：</h3>      
+                                        <div className="amount">
+                                            <button onClick={() => decreaseQuantity()}>-</button>
+                                            <span id="quantity">1</span>
+                                            <button onClick={() => increaseQuantity()}>+</button>
+                                        </div>
+                                    
+
+
+                                    <div className="buy-btn">
+                                        <button  id="buy" onClick={() => addToCart()}>加入購物車</button>
+                                    </div>
+                                </div>
+                                    {/*  <div className="product-title">
                                         <h3>寧靜時光大衣</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, aliquid.</p>
                                         <h2>NT 9,999</h2>
@@ -150,7 +194,7 @@
                                         <div className="buy-btn">
                                             <button id="buy">加入購物車</button>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
 
@@ -213,6 +257,56 @@
 
         </script>
 
+        <script>
+            let quantity = 1; // 初始商品數量
+
+            // 增加數量
+            function increaseQuantity() {
+                quantity += 1;
+                document.getElementById("quantity").textContent = quantity;
+            }
+
+            // 減少數量，確保數量不低於 1
+            function decreaseQuantity() {
+                if (quantity > 1) {
+                    quantity -= 1;
+                    document.getElementById("quantity").textContent = quantity;
+                }
+            }
+
+            // 加入購物車邏輯
+            function addToCart() {
+                const color = document.getElementById("color").value;
+                const size = document.getElementById("size").value;
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                const product = {
+                    id: 1,
+                    name: '商品',
+                    price: 200,
+                    image: '../../project-person/img/shop/shop-4.jpg',
+                    color: color,
+                    size: size,
+                    quantity: quantity // 將選擇的數量一併加入
+                };
+
+                const index = cart.findIndex(
+                    (item) => item.id === product.id && item.color === color && item.size === size
+                );
+
+                if (index !== -1) {
+                    // 商品已經存在購物車，增加數量
+                    cart[index].quantity += quantity;
+                } else {
+                    // 商品不存在於購物車，新增此商品
+                    cart.push(product);
+                }
+
+                // 更新 localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${product.name} (${color}, ${size}) 已加入購物車，數量：${quantity}`);
+            }
+        </script>
 
 
 

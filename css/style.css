@@ -204,6 +204,7 @@ main {
   height: 10vh;
   position: fixed;
   z-index: 999;
+  background-color: #F5F5F5;
 }
 #topbar .logo {
   width: 10%;
@@ -227,7 +228,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 25%;
   height: 6vh;
   justify-content: space-between;
 }
@@ -636,10 +637,6 @@ footer .footerlist ul li a {
 #shopbox .product .product-ifon .product-title {
   color: #221712;
 }
-#shopbox .product .product-ifon .product-title h3 {
-  font-size: 2rem;
-  font-weight: 900;
-}
 #shopbox .product .product-ifon .product-title p {
   margin-bottom: 20px;
 }
@@ -650,14 +647,13 @@ footer .footerlist ul li a {
 }
 #shopbox .product .product-ifon .choice {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   width: 70%;
   padding-bottom: 2px;
   margin-bottom: 15px;
   border-bottom: solid 2px #221712;
 }
-#shopbox .product .product-ifon .choice h2 {
+#shopbox .product .product-ifon .choice .title {
   font-size: 1rem;
   font-weight: 800;
 }
@@ -936,6 +932,9 @@ footer .footerlist ul li a {
   width: 60%;
   height: 100%;
 }
+#checkout .chechoutlist .com_checkout #cart-items h3 {
+  font-size: 1.5rem;
+}
 #checkout .chechoutlist .com_checkout .com_checkout_item {
   display: flex;
   justify-content: space-between;
@@ -971,21 +970,6 @@ footer .footerlist ul li a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .choice {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: #000 solid;
-}
-#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .choice h2 {
-  font-size: 1rem;
-  font-weight: 900;
-}
-#checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .choice select {
-  font-size: 0.75rem;
-  height: 4vh;
 }
 #checkout .chechoutlist .com_checkout .com_checkout_item .com_illustrate .product_buy {
   width: 80%;
