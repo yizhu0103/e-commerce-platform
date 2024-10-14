@@ -10,7 +10,7 @@
 ### 網頁設計 :
 	Figma
 ### 程式語言 :
-	HTML,CSS,SCSS,JavaScript,React 
+	HTML, CSS, SCSS, JavaScript, React 
 ### 第三方套件運用 :
 	jQuery Smoove、Google登入API、fb登入API
 ## 前台導覽
