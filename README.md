@@ -1,6 +1,4 @@
-# Smart Study教學平台
-
-[![pages-build-deployment](https://github.com/yizhu0103/project/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/yizhu0103/project/actions/workflows/pages/pages-build-deployment)
+# 電商平台
 
 ## 基本說明
 專題由**侯譯筑**製作
