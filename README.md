@@ -15,7 +15,9 @@
 	jQuery Smoove、Google登入API、fb登入API
 ## 前台導覽
   **首頁**
- ![image alt](./img/readme/首頁.gif) 
+ ![alt text](./img/readme/首頁.gif) 
+
+ 
   
 ## 未來展望
 -
