@@ -15,7 +15,7 @@
 	jQuery Smoove、Google登入API、fb登入API
 ## 前台導覽
   **首頁**
-  <video controls src="img/readme/首頁.mp4" title="[(./img/readme/首頁.mp4)]"></video>
+  <video controls src="./img/readme/首頁.mp4" title="[(./img/readme/首頁.mp4)]"></video>
   
 ## 未來展望
 -
