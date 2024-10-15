@@ -21,7 +21,7 @@
  ![alt text](./img/readme/商品清單.gif) 
 
    **商品頁面**
- ![alt text](./img/readme/首頁.gif) 
+ ![alt text](./img/readme/商品頁.gif) 
 
    **結帳頁面**
  ![alt text](./img/readme/結帳頁面.gif) 
